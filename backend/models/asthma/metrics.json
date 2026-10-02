@@ -1,0 +1,144 @@
+{
+  "disease": "asthma",
+  "dataset_name": "synthetic_asthma_dataset.csv",
+  "dataset_nature": "synthetic",
+  "selected_model": "HistGradientBoosting_Balanced",
+  "selection_rationale": "Highest CV recall (1.0000), F1-score (0.9997), and ROC-AUC (1.0000) under balanced class weighting; accurately models the non-linear synthetic decision surface.",
+  "training_partition_size": 8000,
+  "test_partition_size": 2000,
+  "cv_folds": 5,
+  "cv_results": {
+    "LogisticRegression_Balanced": {
+      "accuracy_mean": 0.99475,
+      "accuracy_std": 0.0010897247358851452,
+      "balanced_accuracy_mean": 0.9949608769626277,
+      "balanced_accuracy_std": 0.0016716338355851781,
+      "precision_pos_mean": 0.983278569693154,
+      "precision_pos_std": 0.0045753829533525595,
+      "recall_pos_mean": 0.9953727506426736,
+      "recall_pos_std": 0.003778133279357073,
+      "f1_pos_mean": 0.9892757480344967,
+      "f1_pos_std": 0.0022166555370816653,
+      "roc_auc_mean": 0.9998875130131932,
+      "roc_auc_std": 7.825246195457433e-05,
+      "pr_auc_mean": 0.9996500893277703,
+      "pr_auc_std": 0.0002472714012590227,
+      "recall_neg_mean": 0.9945490032825818,
+      "recall_neg_std": 0.0015317709794133063
+    },
+    "RandomForest_Balanced": {
+      "accuracy_mean": 0.9956249999999999,
+      "accuracy_std": 0.002904737509655577,
+      "balanced_accuracy_mean": 0.9920515063045933,
+      "balanced_accuracy_std": 0.005600950100260287,
+      "precision_pos_mean": 0.9968929562368137,
+      "precision_pos_std": 0.004111724829460302,
+      "recall_pos_mean": 0.9850939292070396,
+      "recall_pos_std": 0.011077462021098536,
+      "f1_pos_mean": 0.9909237961210877,
+      "f1_pos_std": 0.006092632718593725,
+      "roc_auc_mean": 0.999874398272714,
+      "roc_auc_std": 8.704329917905344e-05,
+      "pr_auc_mean": 0.9996297410969038,
+      "pr_auc_std": 0.00025268371508985194,
+      "recall_neg_mean": 0.9990090834021469,
+      "recall_neg_std": 0.0013212221304706839
+    },
+    "HistGradientBoosting_Balanced": {
+      "accuracy_mean": 0.9998750000000001,
+      "accuracy_std": 0.0002499999999999947,
+      "balanced_accuracy_mean": 0.9999174236168455,
+      "balanced_accuracy_std": 0.00016515276630881814,
+      "precision_pos_mean": 0.9994871794871795,
+      "precision_pos_std": 0.0010256410256410222,
+      "recall_pos_mean": 1.0,
+      "recall_pos_std": 0.0,
+      "f1_pos_mean": 0.9997432605905006,
+      "f1_pos_std": 0.0005134788189987028,
+      "roc_auc_mean": 0.9999991508855203,
+      "roc_auc_std": 1.6982289595013353e-06,
+      "pr_auc_mean": 0.9999973600017217,
+      "pr_auc_std": 5.279996556772913e-06,
+      "recall_neg_mean": 0.9998348472336911,
+      "recall_neg_std": 0.0003303055326176807
+    },
+    "SVC_Balanced": {
+      "accuracy_mean": 0.991625,
+      "accuracy_std": 0.0024874685927665403,
+      "balanced_accuracy_mean": 0.9894083113492597,
+      "balanced_accuracy_std": 0.004759421292511994,
+      "precision_pos_mean": 0.9806295005957306,
+      "precision_pos_std": 0.006626303949155472,
+      "recall_pos_mean": 0.9850939292070396,
+      "recall_pos_std": 0.009945837305186401,
+      "f1_pos_mean": 0.9828114118665578,
+      "f1_pos_std": 0.0051493277719448305,
+      "roc_auc_mean": 0.9996434287933462,
+      "roc_auc_std": 0.0002217522158901289,
+      "pr_auc_mean": 0.99894004964824,
+      "pr_auc_std": 0.0006646747835131168,
+      "recall_neg_mean": 0.9937226934914797,
+      "recall_neg_std": 0.0021929241620893217
+    }
+  },
+  "final_held_out_test_results": {
+    "test_size": 2000,
+    "test_positive_count": 487,
+    "test_negative_count": 1513,
+    "accuracy": 0.9995,
+    "balanced_accuracy": 0.9996695307336418,
+    "precision_pos": 0.9979508196721312,
+    "recall_pos": 1.0,
+    "f1_pos": 0.9989743589743589,
+    "precision_neg": 1.0,
+    "recall_neg": 0.9993390614672836,
+    "f1_neg": 0.9996694214876033,
+    "roc_auc": 0.9999986428366885,
+    "pr_auc": 0.9999957922375198,
+    "confusion_matrix": {
+      "true_negatives": 1512,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "true_positives": 487
+    }
+  },
+  "dataset_metadata": {
+    "raw_shape": [
+      10000,
+      17
+    ],
+    "predictor_shape": [
+      10000,
+      14
+    ],
+    "features": [
+      "Age",
+      "BMI",
+      "Medication_Adherence",
+      "Number_of_ER_Visits",
+      "Peak_Expiratory_Flow",
+      "FeNO_Level",
+      "Gender",
+      "Smoking_Status",
+      "Allergies",
+      "Air_Pollution_Level",
+      "Physical_Activity_Level",
+      "Occupation_Type",
+      "Comorbidities",
+      "Family_History"
+    ],
+    "excluded_columns": [
+      "Patient_ID",
+      "Asthma_Control_Level"
+    ],
+    "target": "Has_Asthma",
+    "target_distribution": {
+      "negative_count_0": 7567,
+      "positive_count_1": 2433,
+      "positive_rate": 0.2433
+    },
+    "leakage_verification": "Patient_ID and Asthma_Control_Level successfully excluded from feature matrix."
+  },
+  "synthetic_warning": "High metrics reflect deterministic synthetic generation rules and do not represent real-world clinical performance.",
+  "disclaimer": "This model is an AI-based asthma risk-screening research component and is not a clinically validated diagnostic system."
+}

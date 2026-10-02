@@ -1,0 +1,135 @@
+{
+  "model_name": "asthma_risk_screening",
+  "version": "1.0.0",
+  "task": "binary_classification",
+  "dataset_nature": "synthetic",
+  "target": {
+    "name": "Has_Asthma",
+    "positive_class": {
+      "value": 1,
+      "label": "Has Asthma",
+      "description": "Indicates high risk / screening positive for asthma"
+    },
+    "negative_class": {
+      "value": 0,
+      "label": "No Asthma",
+      "description": "Indicates low risk / screening negative for asthma"
+    }
+  },
+  "excluded_columns": [
+    {
+      "name": "Patient_ID",
+      "reason": "Synthetic identifier with zero predictive clinical value"
+    },
+    {
+      "name": "Asthma_Control_Level",
+      "reason": "Direct target leakage; conditional clinical outcome present only for asthmatic patients (N/A for all non-asthmatics)"
+    }
+  ],
+  "features": [
+    {
+      "name": "Age",
+      "type": "numerical",
+      "min": 1,
+      "max": 120,
+      "scaling": "StandardScaler",
+      "description": "Patient age in years"
+    },
+    {
+      "name": "Gender",
+      "type": "categorical",
+      "valid_values": ["Female", "Male", "Other"],
+      "encoding": "OneHotEncoder(handle_unknown='ignore')",
+      "description": "Self-reported gender identity"
+    },
+    {
+      "name": "BMI",
+      "type": "numerical",
+      "min": 10.0,
+      "max": 60.0,
+      "scaling": "StandardScaler",
+      "description": "Body Mass Index (kg/m²)"
+    },
+    {
+      "name": "Smoking_Status",
+      "type": "categorical",
+      "valid_values": ["Never", "Former", "Current"],
+      "encoding": "OneHotEncoder(handle_unknown='ignore')",
+      "description": "Tobacco smoking status"
+    },
+    {
+      "name": "Family_History",
+      "type": "binary",
+      "valid_values": [0, 1],
+      "encoding": "passthrough",
+      "description": "Family history of asthma or atopic diseases (0 = No, 1 = Yes)"
+    },
+    {
+      "name": "Allergies",
+      "type": "categorical",
+      "valid_values": ["None", "Dust", "Pollen", "Pets", "Multiple"],
+      "encoding": "OneHotEncoder(handle_unknown='ignore')",
+      "description": "Documented allergy triggers"
+    },
+    {
+      "name": "Air_Pollution_Level",
+      "type": "categorical",
+      "valid_values": ["Low", "Moderate", "High"],
+      "encoding": "OneHotEncoder(handle_unknown='ignore')",
+      "description": "Environmental air pollution exposure level"
+    },
+    {
+      "name": "Physical_Activity_Level",
+      "type": "categorical",
+      "valid_values": ["Sedentary", "Moderate", "Active"],
+      "encoding": "OneHotEncoder(handle_unknown='ignore')",
+      "description": "Physical activity routine"
+    },
+    {
+      "name": "Occupation_Type",
+      "type": "categorical",
+      "valid_values": ["Indoor", "Outdoor"],
+      "encoding": "OneHotEncoder(handle_unknown='ignore')",
+      "description": "Primary work environment"
+    },
+    {
+      "name": "Comorbidities",
+      "type": "categorical",
+      "valid_values": ["None", "Diabetes", "Hypertension", "Both"],
+      "encoding": "OneHotEncoder(handle_unknown='ignore')",
+      "description": "Pre-existing chronic medical conditions"
+    },
+    {
+      "name": "Medication_Adherence",
+      "type": "numerical",
+      "min": 0.0,
+      "max": 1.0,
+      "scaling": "StandardScaler",
+      "description": "Ratio of prescribed medication taken as directed"
+    },
+    {
+      "name": "Number_of_ER_Visits",
+      "type": "numerical",
+      "min": 0,
+      "max": 20,
+      "scaling": "StandardScaler",
+      "description": "Number of emergency room visits over the observation period"
+    },
+    {
+      "name": "Peak_Expiratory_Flow",
+      "type": "numerical",
+      "min": 50.0,
+      "max": 900.0,
+      "scaling": "StandardScaler",
+      "description": "Peak Expiratory Flow (PEF) rate in L/min"
+    },
+    {
+      "name": "FeNO_Level",
+      "type": "numerical",
+      "min": 0.0,
+      "max": 150.0,
+      "scaling": "StandardScaler",
+      "description": "Fractional exhaled Nitric Oxide in parts per billion (ppb)"
+    }
+  ]
+}
