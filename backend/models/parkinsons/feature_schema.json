@@ -1,0 +1,226 @@
+{
+  "disease": "Parkinson's Disease",
+  "version": "1.0.0",
+  "target": {
+    "name": "status",
+    "type": "integer",
+    "description": "Health status of the patient",
+    "encoding": {
+      "0": "Healthy",
+      "1": "Parkinson's disease"
+    }
+  },
+  "grouping_variable": {
+    "name": "subject_id",
+    "source": "Extracted from recording name (e.g., phon_R01_S01_1 -> S01)",
+    "description": "Patient identifier used exclusively for patient-level grouped cross-validation and holdout splitting. Never included in feature matrix X."
+  },
+  "excluded_columns": [
+    {
+      "name": "name",
+      "reason": "Administrative recording identifier containing patient ID token; excluded to prevent subject memorization leakage."
+    },
+    {
+      "name": "subject_id",
+      "reason": "Patient identifier derived from name; used solely for grouped partitioning."
+    },
+    {
+      "name": "status",
+      "reason": "Ground-truth target variable."
+    }
+  ],
+  "feature_count": 22,
+  "features": [
+    {
+      "name": "MDVP:Fo(Hz)",
+      "type": "float",
+      "required": true,
+      "unit": "Hz",
+      "bounds": [50.0, 400.0],
+      "description": "Average vocal fundamental frequency"
+    },
+    {
+      "name": "MDVP:Fhi(Hz)",
+      "type": "float",
+      "required": true,
+      "unit": "Hz",
+      "bounds": [50.0, 700.0],
+      "description": "Maximum vocal fundamental frequency"
+    },
+    {
+      "name": "MDVP:Flo(Hz)",
+      "type": "float",
+      "required": true,
+      "unit": "Hz",
+      "bounds": [40.0, 350.0],
+      "description": "Minimum vocal fundamental frequency"
+    },
+    {
+      "name": "MDVP:Jitter(%)",
+      "type": "float",
+      "required": true,
+      "unit": "percentage",
+      "bounds": [0.0, 0.1],
+      "description": "MDVP percentage jitter (frequency variation)"
+    },
+    {
+      "name": "MDVP:Jitter(Abs)",
+      "type": "float",
+      "required": true,
+      "unit": "seconds",
+      "bounds": [0.0, 0.001],
+      "description": "MDVP absolute jitter in microseconds"
+    },
+    {
+      "name": "MDVP:RAP",
+      "type": "float",
+      "required": true,
+      "unit": "ratio",
+      "bounds": [0.0, 0.1],
+      "description": "MDVP relative amplitude perturbation"
+    },
+    {
+      "name": "MDVP:PPQ",
+      "type": "float",
+      "required": true,
+      "unit": "ratio",
+      "bounds": [0.0, 0.1],
+      "description": "MDVP five-point period perturbation quotient"
+    },
+    {
+      "name": "Jitter:DDP",
+      "type": "float",
+      "required": true,
+      "unit": "ratio",
+      "bounds": [0.0, 0.3],
+      "description": "Average absolute difference of differences between jitter periods"
+    },
+    {
+      "name": "MDVP:Shimmer",
+      "type": "float",
+      "required": true,
+      "unit": "ratio",
+      "bounds": [0.0, 0.5],
+      "description": "MDVP local shimmer (amplitude variation)"
+    },
+    {
+      "name": "MDVP:Shimmer(dB)",
+      "type": "float",
+      "required": true,
+      "unit": "dB",
+      "bounds": [0.0, 5.0],
+      "description": "MDVP local shimmer in decibels"
+    },
+    {
+      "name": "Shimmer:APQ3",
+      "type": "float",
+      "required": true,
+      "unit": "ratio",
+      "bounds": [0.0, 0.3],
+      "description": "Three-point amplitude perturbation quotient"
+    },
+    {
+      "name": "Shimmer:APQ5",
+      "type": "float",
+      "required": true,
+      "unit": "ratio",
+      "bounds": [0.0, 0.3],
+      "description": "Five-point amplitude perturbation quotient"
+    },
+    {
+      "name": "MDVP:APQ",
+      "type": "float",
+      "required": true,
+      "unit": "ratio",
+      "bounds": [0.0, 0.5],
+      "description": "11-point amplitude perturbation quotient"
+    },
+    {
+      "name": "Shimmer:DDA",
+      "type": "float",
+      "required": true,
+      "unit": "ratio",
+      "bounds": [0.0, 1.0],
+      "description": "Average absolute differences between consecutive amplitude differences"
+    },
+    {
+      "name": "NHR",
+      "type": "float",
+      "required": true,
+      "unit": "ratio",
+      "bounds": [0.0, 1.0],
+      "description": "Noise-to-harmonics ratio"
+    },
+    {
+      "name": "HNR",
+      "type": "float",
+      "required": true,
+      "unit": "dB",
+      "bounds": [0.0, 60.0],
+      "description": "Harmonics-to-noise ratio"
+    },
+    {
+      "name": "RPDE",
+      "type": "float",
+      "required": true,
+      "unit": "entropy",
+      "bounds": [0.0, 1.0],
+      "description": "Recurrence period density entropy (nonlinear measure)"
+    },
+    {
+      "name": "DFA",
+      "type": "float",
+      "required": true,
+      "unit": "exponent",
+      "bounds": [0.0, 1.5],
+      "description": "Detrended fluctuation analysis signal fractal scaling exponent"
+    },
+    {
+      "name": "spread1",
+      "type": "float",
+      "required": true,
+      "unit": "log-frequency variation",
+      "bounds": [-15.0, 0.0],
+      "description": "Nonlinear measure of fundamental frequency variation (spread 1)"
+    },
+    {
+      "name": "spread2",
+      "type": "float",
+      "required": true,
+      "unit": "frequency variation",
+      "bounds": [0.0, 1.0],
+      "description": "Nonlinear measure of fundamental frequency variation (spread 2)"
+    },
+    {
+      "name": "D2",
+      "type": "float",
+      "required": true,
+      "unit": "dimension",
+      "bounds": [0.5, 5.0],
+      "description": "Correlation dimension (nonlinear complexity measure)"
+    },
+    {
+      "name": "PPE",
+      "type": "float",
+      "required": true,
+      "unit": "entropy",
+      "bounds": [0.0, 1.0],
+      "description": "Pitch period entropy (nonlinear measure of perturbation)"
+    }
+  ],
+  "risk_tiers": {
+    "Low": {
+      "probability_range": "[0.0, 0.30)",
+      "description": "Low statistical likelihood based on acoustic measurements."
+    },
+    "Moderate": {
+      "probability_range": "[0.30, 0.70)",
+      "description": "Moderate statistical likelihood; observational monitoring advised."
+    },
+    "High": {
+      "probability_range": "[0.70, 1.0]",
+      "description": "High statistical likelihood; priority clinical consultation advised."
+    },
+    "disclaimer": "Software-defined heuristic risk tiers for UI screening display only. Not a neurological diagnosis or medical severity rating."
+  }
+}
