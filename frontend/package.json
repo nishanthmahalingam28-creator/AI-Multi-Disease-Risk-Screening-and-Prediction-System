@@ -1,0 +1,20 @@
+{
+  "name": "ai-multi-disease-screening-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for AI Multi-Disease Risk Screening and Prediction System",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "healthcare",
+    "ai",
+    "screening",
+    "disease-prediction",
+    "medical-ai"
+  ],
+  "author": "Member 3",
+  "license": "MIT"
+}

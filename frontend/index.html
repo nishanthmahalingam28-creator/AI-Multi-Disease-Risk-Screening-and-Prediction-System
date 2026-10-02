@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI Multi-Disease Risk Screening Platform — Preventive clinical risk assessment across ten chronic and critical health conditions." />
+  <meta name="theme-color" content="#0a0f1d" />
+  <title>AI Multi-Disease Risk Screening and Prediction System</title>
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Core Design System -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚕️</text></svg>" />
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sticky Navigation Root -->
+    <div id="navbar-root"></div>
+
+    <!-- Main Content Area -->
+    <main class="main-content" id="main-content" role="main">
+      <!-- Global Alert Container -->
+      <div id="alert-root" aria-live="polite"></div>
+
+      <!-- Dynamic View Root -->
+      <div id="app-root"></div>
+    </main>
+
+    <!-- Global Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden" role="status" aria-live="assertive">
+      <div class="spinner-wrap">
+        <div class="spinner"></div>
+        <p id="loading-text" class="loading-text">Evaluating statistical model...</p>
+      </div>
+    </div>
+
+    <!-- Application Footer -->
+    <footer class="app-footer">
+      <div class="footer-container">
+        <p>AI Multi-Disease Risk Screening and Prediction System &copy; 2026. All rights reserved.</p>
+        <p class="footer-disclaimer">
+          Notice: This software is designed exclusively for early risk screening and statistical estimation. It does not provide medical diagnosis.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Client Application Bootstrap (Standard ES Modules) -->
+  <script type="module" src="./user/app.js"></script>
+</body>
+</html>
