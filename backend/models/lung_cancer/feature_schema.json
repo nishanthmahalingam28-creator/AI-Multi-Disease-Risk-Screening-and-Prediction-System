@@ -1,0 +1,154 @@
+{
+  "model_name": "lung_cancer_risk_screening",
+  "version": "1.0.0",
+  "task": "binary_classification",
+  "target": {
+    "name": "lung_cancer",
+    "raw_name": "LUNG_CANCER",
+    "positive_class": {
+      "value": 1,
+      "label": "YES",
+      "description": "High risk of lung cancer"
+    },
+    "negative_class": {
+      "value": 0,
+      "label": "NO",
+      "description": "Low risk of lung cancer"
+    }
+  },
+  "features": [
+    {
+      "name": "gender",
+      "raw_name": "GENDER",
+      "type": "categorical",
+      "valid_values": ["MALE", "FEMALE", "male", "female", 0, 1],
+      "encoding": {
+        "MALE": 1,
+        "FEMALE": 0,
+        "male": 1,
+        "female": 0,
+        "1": 1,
+        "0": 0
+      },
+      "description": "Biological sex of the patient"
+    },
+    {
+      "name": "age",
+      "raw_name": "AGE",
+      "type": "numerical",
+      "min": 1,
+      "max": 120,
+      "scaling": "StandardScaler",
+      "description": "Age of the patient in years"
+    },
+    {
+      "name": "smoking",
+      "raw_name": "SMOKING",
+      "type": "binary",
+      "valid_values": [0, 1],
+      "description": "Smoking history (0 = No, 1 = Yes)"
+    },
+    {
+      "name": "yellow_fingers",
+      "raw_name": "YELLOW_FINGERS",
+      "type": "binary",
+      "valid_values": [0, 1],
+      "description": "Presence of nicotine-stained yellow fingers (0 = No, 1 = Yes)"
+    },
+    {
+      "name": "anxiety",
+      "raw_name": "ANXIETY",
+      "type": "binary",
+      "valid_values": [0, 1],
+      "description": "Frequent anxiety or nervousness (0 = No, 1 = Yes)"
+    },
+    {
+      "name": "peer_pressure",
+      "raw_name": "PEER_PRESSURE",
+      "type": "binary",
+      "valid_values": [0, 1],
+      "description": "Exposure to peer pressure influencing habits (0 = No, 1 = Yes)"
+    },
+    {
+      "name": "chronic_disease",
+      "raw_name": "CHRONIC DISEASE",
+      "type": "binary",
+      "valid_values": [0, 1],
+      "description": "History of chronic underlying disease (0 = No, 1 = Yes)"
+    },
+    {
+      "name": "fatigue",
+      "raw_name": "FATIGUE ",
+      "type": "binary",
+      "valid_values": [0, 1],
+      "description": "Persistent unexplained fatigue or lethargy (0 = No, 1 = Yes)"
+    },
+    {
+      "name": "allergy",
+      "raw_name": "ALLERGY ",
+      "type": "binary",
+      "valid_values": [0, 1],
+      "description": "History of allergies or hypersensitivity (0 = No, 1 = Yes)"
+    },
+    {
+      "name": "wheezing",
+      "raw_name": "WHEEZING",
+      "type": "binary",
+      "valid_values": [0, 1],
+      "description": "Whistling or wheezing sound while breathing (0 = No, 1 = Yes)"
+    },
+    {
+      "name": "alcohol_consuming",
+      "raw_name": "ALCOHOL CONSUMING",
+      "type": "binary",
+      "valid_values": [0, 1],
+      "description": "Regular alcohol consumption (0 = No, 1 = Yes)"
+    },
+    {
+      "name": "coughing",
+      "raw_name": "COUGHING",
+      "type": "binary",
+      "valid_values": [0, 1],
+      "description": "Chronic or persistent cough (0 = No, 1 = Yes)"
+    },
+    {
+      "name": "shortness_of_breath",
+      "raw_name": "SHORTNESS OF BREATH",
+      "type": "binary",
+      "valid_values": [0, 1],
+      "description": "Frequent dyspnea or shortness of breath (0 = No, 1 = Yes)"
+    },
+    {
+      "name": "swallowing_difficulty",
+      "raw_name": "SWALLOWING DIFFICULTY",
+      "type": "binary",
+      "valid_values": [0, 1],
+      "description": "Dysphagia or difficulty swallowing (0 = No, 1 = Yes)"
+    },
+    {
+      "name": "chest_pain",
+      "raw_name": "CHEST PAIN",
+      "type": "binary",
+      "valid_values": [0, 1],
+      "description": "Recurrent chest discomfort or pain (0 = No, 1 = Yes)"
+    }
+  ],
+  "raw_to_clean_column_map": {
+    "GENDER": "gender",
+    "AGE": "age",
+    "SMOKING": "smoking",
+    "YELLOW_FINGERS": "yellow_fingers",
+    "ANXIETY": "anxiety",
+    "PEER_PRESSURE": "peer_pressure",
+    "CHRONIC DISEASE": "chronic_disease",
+    "FATIGUE ": "fatigue",
+    "ALLERGY ": "allergy",
+    "WHEEZING": "wheezing",
+    "ALCOHOL CONSUMING": "alcohol_consuming",
+    "COUGHING": "coughing",
+    "SHORTNESS OF BREATH": "shortness_of_breath",
+    "SWALLOWING DIFFICULTY": "swallowing_difficulty",
+    "CHEST PAIN": "chest_pain",
+    "LUNG_CANCER": "lung_cancer"
+  }
+}
