@@ -1,0 +1,444 @@
+{
+  "dataset_path": "datasets/heart_disease/heart.csv",
+  "split_configuration": {
+    "test_size": 0.2,
+    "train_rows": 216,
+    "test_rows_quarantined": 54,
+    "stratified": true,
+    "random_state": 42
+  },
+  "cross_validation_configuration": {
+    "strategy": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 42,
+    "preprocessing": "Approach B (ColumnTransformer: RobustScaler on continuous vitals, passthrough on binary/discrete) fitted strictly fold-by-fold"
+  },
+  "xgboost_status": {
+    "available": true,
+    "version": "3.4.1"
+  },
+  "candidate_cv_results": {
+    "Logistic_Regression": {
+      "model_name": "Logistic Regression",
+      "parameters": {
+        "max_iter": "1000",
+        "random_state": "42"
+      },
+      "accuracy": {
+        "mean": 0.8192,
+        "std": 0.0523,
+        "per_fold": [
+          0.8636,
+          0.7442,
+          0.8605,
+          0.8605,
+          0.7674
+        ]
+      },
+      "precision": {
+        "mean": 0.807,
+        "std": 0.0824,
+        "per_fold": [
+          0.9375,
+          0.75,
+          0.8095,
+          0.8421,
+          0.6957
+        ]
+      },
+      "recall_sensitivity": {
+        "mean": 0.7921,
+        "std": 0.0928,
+        "per_fold": [
+          0.75,
+          0.6316,
+          0.8947,
+          0.8421,
+          0.8421
+        ]
+      },
+      "f1_score": {
+        "mean": 0.7946,
+        "std": 0.0629,
+        "per_fold": [
+          0.8333,
+          0.6857,
+          0.85,
+          0.8421,
+          0.7619
+        ]
+      },
+      "roc_auc": {
+        "mean": 0.9007,
+        "std": 0.0388,
+        "per_fold": [
+          0.8938,
+          0.8377,
+          0.9539,
+          0.9254,
+          0.8925
+        ]
+      },
+      "pr_auc": {
+        "mean": 0.906,
+        "std": 0.034,
+        "per_fold": [
+          0.9107,
+          0.851,
+          0.9472,
+          0.9331,
+          0.8882
+        ]
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 20,
+        "total_false_positives": 19,
+        "total_true_positives": 76,
+        "total_true_negatives": 101,
+        "total_positive_cases": 96,
+        "total_negative_cases": 120
+      },
+      "completed_successfully": true
+    },
+    "Random_Forest": {
+      "model_name": "Random Forest",
+      "parameters": {
+        "max_depth": "None",
+        "n_estimators": "300",
+        "random_state": "42"
+      },
+      "accuracy": {
+        "mean": 0.8332,
+        "std": 0.0478,
+        "per_fold": [
+          0.8636,
+          0.7674,
+          0.814,
+          0.907,
+          0.814
+        ]
+      },
+      "precision": {
+        "mean": 0.841,
+        "std": 0.0713,
+        "per_fold": [
+          0.8889,
+          0.8462,
+          0.7391,
+          0.9412,
+          0.7895
+        ]
+      },
+      "recall_sensitivity": {
+        "mean": 0.7811,
+        "std": 0.1076,
+        "per_fold": [
+          0.8,
+          0.5789,
+          0.8947,
+          0.8421,
+          0.7895
+        ]
+      },
+      "f1_score": {
+        "mean": 0.8035,
+        "std": 0.067,
+        "per_fold": [
+          0.8421,
+          0.6875,
+          0.8095,
+          0.8889,
+          0.7895
+        ]
+      },
+      "roc_auc": {
+        "mean": 0.9064,
+        "std": 0.0378,
+        "per_fold": [
+          0.9313,
+          0.8465,
+          0.9364,
+          0.9408,
+          0.8772
+        ]
+      },
+      "pr_auc": {
+        "mean": 0.9078,
+        "std": 0.0378,
+        "per_fold": [
+          0.9352,
+          0.8428,
+          0.9252,
+          0.9467,
+          0.889
+        ]
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 21,
+        "total_false_positives": 15,
+        "total_true_positives": 75,
+        "total_true_negatives": 105,
+        "total_positive_cases": 96,
+        "total_negative_cases": 120
+      },
+      "completed_successfully": true
+    },
+    "Support_Vector_Classifier": {
+      "model_name": "Support Vector Classifier",
+      "parameters": {
+        "kernel": "rbf",
+        "max_iter": "-1",
+        "probability": "True",
+        "random_state": "42"
+      },
+      "accuracy": {
+        "mean": 0.8147,
+        "std": 0.0217,
+        "per_fold": [
+          0.8409,
+          0.7907,
+          0.8372,
+          0.7907,
+          0.814
+        ]
+      },
+      "precision": {
+        "mean": 0.8315,
+        "std": 0.0577,
+        "per_fold": [
+          0.9333,
+          0.8571,
+          0.8,
+          0.7778,
+          0.7895
+        ]
+      },
+      "recall_sensitivity": {
+        "mean": 0.74,
+        "std": 0.0724,
+        "per_fold": [
+          0.7,
+          0.6316,
+          0.8421,
+          0.7368,
+          0.7895
+        ]
+      },
+      "f1_score": {
+        "mean": 0.7788,
+        "std": 0.033,
+        "per_fold": [
+          0.8,
+          0.7273,
+          0.8205,
+          0.7568,
+          0.7895
+        ]
+      },
+      "roc_auc": {
+        "mean": 0.8989,
+        "std": 0.0187,
+        "per_fold": [
+          0.8958,
+          0.875,
+          0.9254,
+          0.8838,
+          0.9145
+        ]
+      },
+      "pr_auc": {
+        "mean": 0.9035,
+        "std": 0.0233,
+        "per_fold": [
+          0.9045,
+          0.8635,
+          0.9324,
+          0.8978,
+          0.9194
+        ]
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 25,
+        "total_false_positives": 15,
+        "total_true_positives": 71,
+        "total_true_negatives": 105,
+        "total_positive_cases": 96,
+        "total_negative_cases": 120
+      },
+      "completed_successfully": true
+    },
+    "Gradient_Boosting": {
+      "model_name": "Gradient Boosting",
+      "parameters": {
+        "learning_rate": "0.1",
+        "max_depth": "3",
+        "n_estimators": "100",
+        "random_state": "42"
+      },
+      "accuracy": {
+        "mean": 0.7823,
+        "std": 0.0351,
+        "per_fold": [
+          0.7955,
+          0.7442,
+          0.7907,
+          0.8372,
+          0.7442
+        ]
+      },
+      "precision": {
+        "mean": 0.7304,
+        "std": 0.0438,
+        "per_fold": [
+          0.7619,
+          0.7,
+          0.7083,
+          0.8,
+          0.6818
+        ]
+      },
+      "recall_sensitivity": {
+        "mean": 0.8126,
+        "std": 0.053,
+        "per_fold": [
+          0.8,
+          0.7368,
+          0.8947,
+          0.8421,
+          0.7895
+        ]
+      },
+      "f1_score": {
+        "mean": 0.7683,
+        "std": 0.0381,
+        "per_fold": [
+          0.7805,
+          0.7179,
+          0.7907,
+          0.8205,
+          0.7317
+        ]
+      },
+      "roc_auc": {
+        "mean": 0.8816,
+        "std": 0.0507,
+        "per_fold": [
+          0.9146,
+          0.8004,
+          0.9079,
+          0.9386,
+          0.8465
+        ]
+      },
+      "pr_auc": {
+        "mean": 0.8761,
+        "std": 0.0542,
+        "per_fold": [
+          0.9063,
+          0.7884,
+          0.8984,
+          0.9435,
+          0.8438
+        ]
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 18,
+        "total_false_positives": 29,
+        "total_true_positives": 78,
+        "total_true_negatives": 91,
+        "total_positive_cases": 96,
+        "total_negative_cases": 120
+      },
+      "completed_successfully": true
+    },
+    "XGBoost": {
+      "model_name": "XGBoost",
+      "parameters": {
+        "learning_rate": "0.1",
+        "max_depth": "3",
+        "n_estimators": "100",
+        "random_state": "42"
+      },
+      "accuracy": {
+        "mean": 0.8099,
+        "std": 0.0601,
+        "per_fold": [
+          0.8636,
+          0.7209,
+          0.814,
+          0.8837,
+          0.7674
+        ]
+      },
+      "precision": {
+        "mean": 0.7932,
+        "std": 0.0824,
+        "per_fold": [
+          0.8889,
+          0.6842,
+          0.7391,
+          0.8889,
+          0.7647
+        ]
+      },
+      "recall_sensitivity": {
+        "mean": 0.7811,
+        "std": 0.0846,
+        "per_fold": [
+          0.8,
+          0.6842,
+          0.8947,
+          0.8421,
+          0.6842
+        ]
+      },
+      "f1_score": {
+        "mean": 0.7846,
+        "std": 0.0698,
+        "per_fold": [
+          0.8421,
+          0.6842,
+          0.8095,
+          0.8649,
+          0.7222
+        ]
+      },
+      "roc_auc": {
+        "mean": 0.8837,
+        "std": 0.0605,
+        "per_fold": [
+          0.9271,
+          0.8048,
+          0.9145,
+          0.9539,
+          0.818
+        ]
+      },
+      "pr_auc": {
+        "mean": 0.8807,
+        "std": 0.0647,
+        "per_fold": [
+          0.9252,
+          0.8049,
+          0.9084,
+          0.9614,
+          0.8037
+        ]
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 21,
+        "total_false_positives": 20,
+        "total_true_positives": 75,
+        "total_true_negatives": 100,
+        "total_positive_cases": 96,
+        "total_negative_cases": 120
+      },
+      "completed_successfully": true
+    }
+  },
+  "quarantine_confirmation": {
+    "test_set_used_during_cv": false,
+    "test_rows_quarantined": 54
+  }
+}

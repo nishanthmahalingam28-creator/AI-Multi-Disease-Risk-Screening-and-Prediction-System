@@ -1,0 +1,574 @@
+{
+  "dataset_name": "Heart Disease Dataset",
+  "dataset_path": "datasets/heart_disease/heart.csv",
+  "dataset_shape": {
+    "rows": 270,
+    "columns": 14
+  },
+  "target_distribution": {
+    "target_column": "Heart Disease",
+    "classes": {
+      "Absence": {
+        "count": 150,
+        "percentage": 55.5556
+      },
+      "Presence": {
+        "count": 120,
+        "percentage": 44.4444
+      }
+    },
+    "imbalance_ratio": 1.25
+  },
+  "missing_values": {
+    "total_missing": 0,
+    "per_column": {
+      "Age": 0,
+      "Sex": 0,
+      "Chest pain type": 0,
+      "BP": 0,
+      "Cholesterol": 0,
+      "FBS over 120": 0,
+      "EKG results": 0,
+      "Max HR": 0,
+      "Exercise angina": 0,
+      "ST depression": 0,
+      "Slope of ST": 0,
+      "Number of vessels fluro": 0,
+      "Thallium": 0,
+      "Heart Disease": 0
+    }
+  },
+  "duplicate_rows": 0,
+  "numeric_features_descriptive_statistics": {
+    "Age": {
+      "count": 270,
+      "mean": 54.4333,
+      "std": 9.1091,
+      "min": 29.0,
+      "25%": 48.0,
+      "50%_median": 55.0,
+      "75%": 61.0,
+      "max": 77.0
+    },
+    "Sex": {
+      "count": 270,
+      "mean": 0.6778,
+      "std": 0.4682,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%_median": 1.0,
+      "75%": 1.0,
+      "max": 1.0
+    },
+    "Chest pain type": {
+      "count": 270,
+      "mean": 3.1741,
+      "std": 0.9501,
+      "min": 1.0,
+      "25%": 3.0,
+      "50%_median": 3.0,
+      "75%": 4.0,
+      "max": 4.0
+    },
+    "BP": {
+      "count": 270,
+      "mean": 131.3444,
+      "std": 17.8616,
+      "min": 94.0,
+      "25%": 120.0,
+      "50%_median": 130.0,
+      "75%": 140.0,
+      "max": 200.0
+    },
+    "Cholesterol": {
+      "count": 270,
+      "mean": 249.6593,
+      "std": 51.6862,
+      "min": 126.0,
+      "25%": 213.0,
+      "50%_median": 245.0,
+      "75%": 280.0,
+      "max": 564.0
+    },
+    "FBS over 120": {
+      "count": 270,
+      "mean": 0.1481,
+      "std": 0.3559,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%_median": 0.0,
+      "75%": 0.0,
+      "max": 1.0
+    },
+    "EKG results": {
+      "count": 270,
+      "mean": 1.0222,
+      "std": 0.9979,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%_median": 2.0,
+      "75%": 2.0,
+      "max": 2.0
+    },
+    "Max HR": {
+      "count": 270,
+      "mean": 149.6778,
+      "std": 23.1657,
+      "min": 71.0,
+      "25%": 133.0,
+      "50%_median": 153.5,
+      "75%": 166.0,
+      "max": 202.0
+    },
+    "Exercise angina": {
+      "count": 270,
+      "mean": 0.3296,
+      "std": 0.471,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%_median": 0.0,
+      "75%": 1.0,
+      "max": 1.0
+    },
+    "ST depression": {
+      "count": 270,
+      "mean": 1.05,
+      "std": 1.1452,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%_median": 0.8,
+      "75%": 1.6,
+      "max": 6.2
+    },
+    "Slope of ST": {
+      "count": 270,
+      "mean": 1.5852,
+      "std": 0.6144,
+      "min": 1.0,
+      "25%": 1.0,
+      "50%_median": 2.0,
+      "75%": 2.0,
+      "max": 3.0
+    },
+    "Number of vessels fluro": {
+      "count": 270,
+      "mean": 0.6704,
+      "std": 0.9439,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%_median": 0.0,
+      "75%": 1.0,
+      "max": 3.0
+    },
+    "Thallium": {
+      "count": 270,
+      "mean": 4.6963,
+      "std": 1.9407,
+      "min": 3.0,
+      "25%": 3.0,
+      "50%_median": 3.0,
+      "75%": 7.0,
+      "max": 7.0
+    }
+  },
+  "zero_value_analysis": {
+    "Age": {
+      "zero_count": 0,
+      "zero_percentage": 0.0,
+      "feature_type": "continuous_measurement",
+      "zero_interpretation_note": "Physiological measurement with strictly positive readings (0 zeros observed)"
+    },
+    "Sex": {
+      "zero_count": 87,
+      "zero_percentage": 32.2222,
+      "feature_type": "discrete_indicator",
+      "zero_interpretation_note": "Valid discrete category or zero count"
+    },
+    "Chest pain type": {
+      "zero_count": 0,
+      "zero_percentage": 0.0,
+      "feature_type": "discrete_indicator",
+      "zero_interpretation_note": "Valid discrete category or zero count"
+    },
+    "BP": {
+      "zero_count": 0,
+      "zero_percentage": 0.0,
+      "feature_type": "continuous_measurement",
+      "zero_interpretation_note": "Physiological measurement with strictly positive readings (0 zeros observed)"
+    },
+    "Cholesterol": {
+      "zero_count": 0,
+      "zero_percentage": 0.0,
+      "feature_type": "continuous_measurement",
+      "zero_interpretation_note": "Physiological measurement with strictly positive readings (0 zeros observed)"
+    },
+    "FBS over 120": {
+      "zero_count": 230,
+      "zero_percentage": 85.1852,
+      "feature_type": "discrete_indicator",
+      "zero_interpretation_note": "Valid discrete category or zero count"
+    },
+    "EKG results": {
+      "zero_count": 131,
+      "zero_percentage": 48.5185,
+      "feature_type": "discrete_indicator",
+      "zero_interpretation_note": "Valid discrete category or zero count"
+    },
+    "Max HR": {
+      "zero_count": 0,
+      "zero_percentage": 0.0,
+      "feature_type": "continuous_measurement",
+      "zero_interpretation_note": "Physiological measurement with strictly positive readings (0 zeros observed)"
+    },
+    "Exercise angina": {
+      "zero_count": 181,
+      "zero_percentage": 67.037,
+      "feature_type": "discrete_indicator",
+      "zero_interpretation_note": "Valid discrete category or zero count"
+    },
+    "ST depression": {
+      "zero_count": 85,
+      "zero_percentage": 31.4815,
+      "feature_type": "continuous_measurement",
+      "zero_interpretation_note": "Zero ST depression (baseline/no depression)"
+    },
+    "Slope of ST": {
+      "zero_count": 0,
+      "zero_percentage": 0.0,
+      "feature_type": "discrete_indicator",
+      "zero_interpretation_note": "Valid discrete category or zero count"
+    },
+    "Number of vessels fluro": {
+      "zero_count": 160,
+      "zero_percentage": 59.2593,
+      "feature_type": "discrete_indicator",
+      "zero_interpretation_note": "Valid discrete category or zero count"
+    },
+    "Thallium": {
+      "zero_count": 0,
+      "zero_percentage": 0.0,
+      "feature_type": "discrete_indicator",
+      "zero_interpretation_note": "Valid discrete category or zero count"
+    }
+  },
+  "distribution_skewness": {
+    "Age": {
+      "skewness": -0.1636,
+      "skew_classification": "approximately_symmetric"
+    },
+    "Sex": {
+      "skewness": -0.7651,
+      "skew_classification": "moderately_skewed"
+    },
+    "Chest pain type": {
+      "skewness": -0.8788,
+      "skew_classification": "moderately_skewed"
+    },
+    "BP": {
+      "skewness": 0.7226,
+      "skew_classification": "moderately_skewed"
+    },
+    "Cholesterol": {
+      "skewness": 1.1837,
+      "skew_classification": "highly_skewed"
+    },
+    "FBS over 120": {
+      "skewness": 1.992,
+      "skew_classification": "highly_skewed"
+    },
+    "EKG results": {
+      "skewness": -0.0447,
+      "skew_classification": "approximately_symmetric"
+    },
+    "Max HR": {
+      "skewness": -0.5277,
+      "skew_classification": "moderately_skewed"
+    },
+    "Exercise angina": {
+      "skewness": 0.7289,
+      "skew_classification": "moderately_skewed"
+    },
+    "ST depression": {
+      "skewness": 1.2629,
+      "skew_classification": "highly_skewed"
+    },
+    "Slope of ST": {
+      "skewness": 0.5432,
+      "skew_classification": "moderately_skewed"
+    },
+    "Number of vessels fluro": {
+      "skewness": 1.2099,
+      "skew_classification": "highly_skewed"
+    },
+    "Thallium": {
+      "skewness": 0.2873,
+      "skew_classification": "approximately_symmetric"
+    }
+  },
+  "iqr_outlier_analysis": {
+    "Age": {
+      "q1": 48.0,
+      "q3": 61.0,
+      "iqr": 13.0,
+      "lower_bound": 28.5,
+      "upper_bound": 80.5,
+      "outlier_count": 0,
+      "outlier_percentage": 0.0
+    },
+    "Sex": {
+      "q1": 0.0,
+      "q3": 1.0,
+      "iqr": 1.0,
+      "lower_bound": -1.5,
+      "upper_bound": 2.5,
+      "outlier_count": 0,
+      "outlier_percentage": 0.0
+    },
+    "Chest pain type": {
+      "q1": 3.0,
+      "q3": 4.0,
+      "iqr": 1.0,
+      "lower_bound": 1.5,
+      "upper_bound": 5.5,
+      "outlier_count": 20,
+      "outlier_percentage": 7.4074
+    },
+    "BP": {
+      "q1": 120.0,
+      "q3": 140.0,
+      "iqr": 20.0,
+      "lower_bound": 90.0,
+      "upper_bound": 170.0,
+      "outlier_count": 9,
+      "outlier_percentage": 3.3333
+    },
+    "Cholesterol": {
+      "q1": 213.0,
+      "q3": 280.0,
+      "iqr": 67.0,
+      "lower_bound": 112.5,
+      "upper_bound": 380.5,
+      "outlier_count": 5,
+      "outlier_percentage": 1.8519
+    },
+    "FBS over 120": {
+      "q1": 0.0,
+      "q3": 0.0,
+      "iqr": 0.0,
+      "lower_bound": 0.0,
+      "upper_bound": 0.0,
+      "outlier_count": 40,
+      "outlier_percentage": 14.8148
+    },
+    "EKG results": {
+      "q1": 0.0,
+      "q3": 2.0,
+      "iqr": 2.0,
+      "lower_bound": -3.0,
+      "upper_bound": 5.0,
+      "outlier_count": 0,
+      "outlier_percentage": 0.0
+    },
+    "Max HR": {
+      "q1": 133.0,
+      "q3": 166.0,
+      "iqr": 33.0,
+      "lower_bound": 83.5,
+      "upper_bound": 215.5,
+      "outlier_count": 1,
+      "outlier_percentage": 0.3704
+    },
+    "Exercise angina": {
+      "q1": 0.0,
+      "q3": 1.0,
+      "iqr": 1.0,
+      "lower_bound": -1.5,
+      "upper_bound": 2.5,
+      "outlier_count": 0,
+      "outlier_percentage": 0.0
+    },
+    "ST depression": {
+      "q1": 0.0,
+      "q3": 1.6,
+      "iqr": 1.6,
+      "lower_bound": -2.4,
+      "upper_bound": 4.0,
+      "outlier_count": 4,
+      "outlier_percentage": 1.4815
+    },
+    "Slope of ST": {
+      "q1": 1.0,
+      "q3": 2.0,
+      "iqr": 1.0,
+      "lower_bound": -0.5,
+      "upper_bound": 3.5,
+      "outlier_count": 0,
+      "outlier_percentage": 0.0
+    },
+    "Number of vessels fluro": {
+      "q1": 0.0,
+      "q3": 1.0,
+      "iqr": 1.0,
+      "lower_bound": -1.5,
+      "upper_bound": 2.5,
+      "outlier_count": 19,
+      "outlier_percentage": 7.037
+    },
+    "Thallium": {
+      "q1": 3.0,
+      "q3": 7.0,
+      "iqr": 4.0,
+      "lower_bound": -3.0,
+      "upper_bound": 13.0,
+      "outlier_count": 0,
+      "outlier_percentage": 0.0
+    }
+  },
+  "feature_to_feature_correlations_top_10": [
+    {
+      "feature_1": "ST depression",
+      "feature_2": "Slope of ST",
+      "pearson_r": 0.6097,
+      "abs_r": 0.6097
+    },
+    {
+      "feature_1": "Age",
+      "feature_2": "Max HR",
+      "pearson_r": -0.4022,
+      "abs_r": 0.4022
+    },
+    {
+      "feature_1": "Sex",
+      "feature_2": "Thallium",
+      "pearson_r": 0.391,
+      "abs_r": 0.391
+    },
+    {
+      "feature_1": "Max HR",
+      "feature_2": "Slope of ST",
+      "pearson_r": -0.3868,
+      "abs_r": 0.3868
+    },
+    {
+      "feature_1": "Max HR",
+      "feature_2": "Exercise angina",
+      "pearson_r": -0.3807,
+      "abs_r": 0.3807
+    },
+    {
+      "feature_1": "Age",
+      "feature_2": "Number of vessels fluro",
+      "pearson_r": 0.3561,
+      "abs_r": 0.3561
+    },
+    {
+      "feature_1": "Chest pain type",
+      "feature_2": "Exercise angina",
+      "pearson_r": 0.3532,
+      "abs_r": 0.3532
+    },
+    {
+      "feature_1": "Max HR",
+      "feature_2": "ST depression",
+      "pearson_r": -0.349,
+      "abs_r": 0.349
+    },
+    {
+      "feature_1": "ST depression",
+      "feature_2": "Thallium",
+      "pearson_r": 0.3243,
+      "abs_r": 0.3243
+    },
+    {
+      "feature_1": "Exercise angina",
+      "feature_2": "Thallium",
+      "pearson_r": 0.3214,
+      "abs_r": 0.3214
+    }
+  ],
+  "feature_to_target_correlations": [
+    {
+      "feature": "Thallium",
+      "pearson_r_with_target": 0.525,
+      "abs_r": 0.525
+    },
+    {
+      "feature": "Number of vessels fluro",
+      "pearson_r_with_target": 0.4553,
+      "abs_r": 0.4553
+    },
+    {
+      "feature": "Exercise angina",
+      "pearson_r_with_target": 0.4193,
+      "abs_r": 0.4193
+    },
+    {
+      "feature": "Max HR",
+      "pearson_r_with_target": -0.4185,
+      "abs_r": 0.4185
+    },
+    {
+      "feature": "ST depression",
+      "pearson_r_with_target": 0.418,
+      "abs_r": 0.418
+    },
+    {
+      "feature": "Chest pain type",
+      "pearson_r_with_target": 0.4174,
+      "abs_r": 0.4174
+    },
+    {
+      "feature": "Slope of ST",
+      "pearson_r_with_target": 0.3376,
+      "abs_r": 0.3376
+    },
+    {
+      "feature": "Sex",
+      "pearson_r_with_target": 0.2977,
+      "abs_r": 0.2977
+    },
+    {
+      "feature": "Age",
+      "pearson_r_with_target": 0.2123,
+      "abs_r": 0.2123
+    },
+    {
+      "feature": "EKG results",
+      "pearson_r_with_target": 0.1821,
+      "abs_r": 0.1821
+    },
+    {
+      "feature": "BP",
+      "pearson_r_with_target": 0.1554,
+      "abs_r": 0.1554
+    },
+    {
+      "feature": "Cholesterol",
+      "pearson_r_with_target": 0.118,
+      "abs_r": 0.118
+    },
+    {
+      "feature": "FBS over 120",
+      "pearson_r_with_target": -0.0163,
+      "abs_r": 0.0163
+    }
+  ],
+  "leakage_diagnostic": {
+    "highest_absolute_feature_correlation": 0.6097,
+    "highest_feature_pair": "ST depression vs Slope of ST",
+    "highest_target_correlation": 0.525,
+    "highest_target_feature": "Thallium",
+    "threshold_checked": 0.85,
+    "exceeds_threshold": false,
+    "leakage_statement": "No obvious target leakage was identified during the feature and target inspection. Correlation analysis was used as one diagnostic check and does not by itself prove the absence of leakage or proxy identifiers."
+  },
+  "data_quality_observations": [
+    "The dataset consists of exactly 270 rows and 14 columns with zero standard null/missing values.",
+    "There are zero duplicate rows across the entire dataset.",
+    "Continuous physiological measurements ('BP', 'Cholesterol', 'Max HR') contain 0 zero values (all strictly positive).",
+    "Zero values exist in discrete/indicator features ('Sex', 'FBS over 120', 'EKG results', 'Exercise angina', 'Number of vessels fluro') and 'ST depression' (representing 0 baseline depression).",
+    "High positive skewness is observed in 'FBS over 120' (+1.9920), 'ST depression' (+1.2629), 'Number of vessels fluro' (+1.2099), and 'Cholesterol' (+1.1837).",
+    "Statistical IQR outlier flags are observed in 'BP' (9 records, 3.33%), 'Cholesterol' (5 records, 1.85%), 'ST depression' (4 records, 1.48%), and 'Max HR' (1 record, 0.37%).",
+    "All features have correlation |r| < 0.61 with each other and |r| <= 0.5250 with the target variable 'Heart Disease'."
+  ]
+}

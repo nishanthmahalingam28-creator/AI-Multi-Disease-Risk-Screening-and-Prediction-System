@@ -1,0 +1,70 @@
+{
+  "model_domain": "heart_disease",
+  "dataset_path": "datasets/heart_disease/heart.csv",
+  "dataset_row_count": 270,
+  "target_column": "Heart Disease",
+  "target_mapping": {
+    "Absence": 0,
+    "Presence": 1
+  },
+  "target_data_type": "object -> int64 (binary encoded for modeling: Absence=0, Presence=1)",
+  "target_observed_values": [
+    "Absence",
+    "Presence"
+  ],
+  "target_value_counts": {
+    "Absence": 150,
+    "Presence": 120
+  },
+  "target_binary_counts": {
+    "0": 150,
+    "1": 120
+  },
+  "feature_count": 13,
+  "exact_feature_names_in_order": [
+    "Age",
+    "Sex",
+    "Chest pain type",
+    "BP",
+    "Cholesterol",
+    "FBS over 120",
+    "EKG results",
+    "Max HR",
+    "Exercise angina",
+    "ST depression",
+    "Slope of ST",
+    "Number of vessels fluro",
+    "Thallium"
+  ],
+  "feature_data_types": {
+    "Age": "int64",
+    "Sex": "int64",
+    "Chest pain type": "int64",
+    "BP": "int64",
+    "Cholesterol": "int64",
+    "FBS over 120": "int64",
+    "EKG results": "int64",
+    "Max HR": "int64",
+    "Exercise angina": "int64",
+    "ST depression": "float64",
+    "Slope of ST": "int64",
+    "Number of vessels fluro": "int64",
+    "Thallium": "int64"
+  },
+  "target_leakage_check": {
+    "target_in_X": false,
+    "leakage_status": "PASSED (Target 'Heart Disease' is strictly excluded from predictor matrix X)",
+    "leakage_diagnostic_note": "No obvious target leakage was identified during the feature and target inspection. Correlation analysis was used as one diagnostic check and does not by itself prove the absence of leakage or proxy identifiers."
+  },
+  "pipeline_state_documentation": {
+    "feature_engineering_performed": false,
+    "zero_value_replacement_performed": false,
+    "imputation_performed": false,
+    "scaling_performed": false,
+    "outlier_removal_performed": false,
+    "feature_selection_performed": false,
+    "train_test_split_performed": false,
+    "model_training_performed": false,
+    "notes": "Features and target are defined in their raw observed state. No transformations, scaling, or feature engineering have been applied."
+  }
+}

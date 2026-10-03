@@ -1,0 +1,72 @@
+{
+  "model_domain": "heart_disease",
+  "dataset_path": "datasets/heart_disease/heart.csv",
+  "evaluation_protocol": "5-fold StratifiedKFold on X_train (216 rows); final test set (54 rows) strictly quarantined",
+  "candidate_models_considered": [
+    "Logistic_Regression",
+    "Random_Forest",
+    "Support_Vector_Classifier",
+    "Gradient_Boosting",
+    "XGBoost"
+  ],
+  "step_6_cross_validation_metrics": {
+    "Logistic_Regression": {
+      "accuracy": "0.8192 +/- 0.0523",
+      "precision": "0.8070 +/- 0.0824",
+      "recall_sensitivity": "0.7921 +/- 0.0928",
+      "f1_score": "0.7946 +/- 0.0629",
+      "roc_auc": "0.9007 +/- 0.0388",
+      "false_negatives": 20,
+      "false_positives": 19
+    },
+    "Random_Forest": {
+      "accuracy": "0.8332 +/- 0.0478",
+      "precision": "0.8410 +/- 0.0713",
+      "recall_sensitivity": "0.7811 +/- 0.1076",
+      "f1_score": "0.8035 +/- 0.0670",
+      "roc_auc": "0.9064 +/- 0.0378",
+      "false_negatives": 21,
+      "false_positives": 15
+    },
+    "Support_Vector_Classifier": {
+      "accuracy": "0.8147 +/- 0.0217",
+      "precision": "0.8315 +/- 0.0577",
+      "recall_sensitivity": "0.7400 +/- 0.0724",
+      "f1_score": "0.7788 +/- 0.0330",
+      "roc_auc": "0.8989 +/- 0.0187",
+      "false_negatives": 25,
+      "false_positives": 15
+    },
+    "Gradient_Boosting": {
+      "accuracy": "0.7823 +/- 0.0351",
+      "precision": "0.7304 +/- 0.0438",
+      "recall_sensitivity": "0.8126 +/- 0.0530",
+      "f1_score": "0.7683 +/- 0.0381",
+      "roc_auc": "0.8816 +/- 0.0507",
+      "false_negatives": 18,
+      "false_positives": 29
+    },
+    "XGBoost": {
+      "accuracy": "0.8099 +/- 0.0601",
+      "precision": "0.7932 +/- 0.0824",
+      "recall_sensitivity": "0.7811 +/- 0.0846",
+      "f1_score": "0.7846 +/- 0.0698",
+      "roc_auc": "0.8837 +/- 0.0605",
+      "false_negatives": 21,
+      "false_positives": 20
+    }
+  },
+  "selected_model": "Random_Forest",
+  "selected_model_parameters": {
+    "n_estimators": 300,
+    "random_state": 42,
+    "n_jobs": -1
+  },
+  "selection_basis": "Empirical 5-fold cross-validation evidence from Step 6",
+  "technical_selection_rationale": "Random Forest was selected based strictly on Step 6 5-fold cross-validation evidence on the 216-row training partition. It achieved the highest mean Accuracy (0.8332 +/- 0.0478), highest Precision (0.8410 +/- 0.0713), highest F1-Score (0.8035 +/- 0.0670), highest ROC-AUC (0.9064 +/- 0.0378), and highest PR-AUC (0.9078 +/- 0.0378) among all evaluated candidate models. It also achieved the lowest cumulative False Positives (15). While Gradient Boosting yielded slightly higher recall (0.8126 vs 0.7811, representing 18 vs 21 false negatives across 216 validation samples), it incurred nearly double the false positives (29 vs 15) and substantially lower ROC-AUC (0.8816 vs 0.9064) and F1-score (0.7683 vs 0.8035). Logistic Regression demonstrated competitive metrics (ROC-AUC 0.9007, 20 FNs, 19 FPs) but lower accuracy and F1 compared to Random Forest.",
+  "quarantine_confirmation": {
+    "test_set_used_during_selection": false,
+    "test_rows_quarantined": 54,
+    "final_training_rows": 216
+  }
+}
