@@ -1,0 +1,74 @@
+{
+  "model_domain": "diabetes",
+  "dataset_path": "datasets/diabetes/diabetes.csv",
+  "evaluation_protocol": "5-fold StratifiedKFold on X_train (614 rows); final test set (154 rows) strictly quarantined",
+  "candidate_models_evaluated": [
+    "Logistic_Regression",
+    "Random_Forest",
+    "Support_Vector_Classifier",
+    "Gradient_Boosting",
+    "XGBoost"
+  ],
+  "step_6_cross_validation_metrics": {
+    "Logistic_Regression": {
+      "accuracy": "0.7899 +/- 0.0194",
+      "precision": "0.7652 +/- 0.0605",
+      "recall_sensitivity": "0.5794 +/- 0.0152",
+      "f1_score": "0.6583 +/- 0.0231",
+      "roc_auc": "0.8434 +/- 0.0188",
+      "false_negatives": 90,
+      "false_positives": 39
+    },
+    "Random_Forest": {
+      "accuracy": "0.7655 +/- 0.0254",
+      "precision": "0.6965 +/- 0.0629",
+      "recall_sensitivity": "0.5935 +/- 0.0180",
+      "f1_score": "0.6391 +/- 0.0244",
+      "roc_auc": "0.8209 +/- 0.0211",
+      "false_negatives": 87,
+      "false_positives": 57
+    },
+    "Support_Vector_Classifier": {
+      "accuracy": "0.7279 +/- 0.0542",
+      "precision": "0.6794 +/- 0.1146",
+      "recall_sensitivity": "0.3822 +/- 0.1784",
+      "f1_score": "0.4714 +/- 0.1771",
+      "roc_auc": "0.8145 +/- 0.0367",
+      "false_negatives": 132,
+      "false_positives": 35
+    },
+    "Gradient_Boosting": {
+      "accuracy": "0.7557 +/- 0.0180",
+      "precision": "0.6721 +/- 0.0508",
+      "recall_sensitivity": "0.5981 +/- 0.0308",
+      "f1_score": "0.6308 +/- 0.0134",
+      "roc_auc": "0.8195 +/- 0.0165",
+      "false_negatives": 86,
+      "false_positives": 64
+    },
+    "XGBoost": {
+      "accuracy": "0.7589 +/- 0.0344",
+      "precision": "0.6877 +/- 0.0772",
+      "recall_sensitivity": "0.5842 +/- 0.0513",
+      "f1_score": "0.6285 +/- 0.0457",
+      "roc_auc": "0.8205 +/- 0.0249",
+      "false_negatives": 89,
+      "false_positives": 59
+    }
+  },
+  "selected_model": "Logistic_Regression",
+  "selected_model_parameters": {
+    "max_iter": 1000,
+    "random_state": 42
+  },
+  "technical_selection_rationale": "Logistic Regression was selected based strictly on Step 6 5-fold cross-validation evidence on the 614-row training partition. It achieved the highest mean Accuracy (0.7899 +/- 0.0194), highest Precision (0.7652 +/- 0.0605), highest F1-Score (0.6583 +/- 0.0231), and highest ROC-AUC (0.8434 +/- 0.0188) among all evaluated candidate models. Across the 5 folds, its recall standard deviation was 0.0152. While tree-based ensembles (Gradient Boosting and Random Forest) yielded higher recall (0.5981 and 0.5935 vs 0.5794, representing 4 and 3 fewer false negatives across 614 validation samples), they incurred more false positives (64 and 57 vs 39 for Logistic Regression) and lower mean ROC-AUC (0.8195 and 0.8209 vs 0.8434).",
+  "trade_off_analysis": {
+    "recall_vs_precision": "Gradient Boosting and Random Forest achieved 4 and 3 fewer false negatives respectively across the 614 training validation folds (86 and 87 vs 90 FNs for Logistic Regression). However, this marginal recall difference (+1.87% and +1.41%) was accompanied by an increase in false positives (64 and 57 FPs vs 39 for Logistic Regression). Logistic Regression maintained higher mean ROC-AUC (0.8434 vs 0.8195 and 0.8209) and the highest mean F1-score (0.6583).",
+    "variance_stability": "Logistic Regression exhibited lower recall standard deviation across folds (0.0152) than Gradient Boosting (0.0308) and XGBoost (0.0513) on this dataset.",
+    "simplicity_and_calibration": "Logistic Regression is a linear baseline model that outputs class probabilities directly via the logistic link function without additional ensemble parameters."
+  },
+  "quarantine_confirmation": {
+    "test_set_used_during_selection": false,
+    "test_rows_quarantined": 154
+  }
+}

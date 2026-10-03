@@ -1,0 +1,49 @@
+{
+  "model_domain": "diabetes",
+  "dataset_path": "datasets/diabetes/diabetes.csv",
+  "dataset_row_count": 768,
+  "target_column": "Outcome",
+  "target_data_type": "int64",
+  "target_observed_values": [
+    0,
+    1
+  ],
+  "target_value_counts": {
+    "0": 500,
+    "1": 268
+  },
+  "feature_count": 8,
+  "exact_feature_names_in_order": [
+    "Pregnancies",
+    "Glucose",
+    "BloodPressure",
+    "SkinThickness",
+    "Insulin",
+    "BMI",
+    "DiabetesPedigreeFunction",
+    "Age"
+  ],
+  "feature_data_types": {
+    "Pregnancies": "int64",
+    "Glucose": "int64",
+    "BloodPressure": "int64",
+    "SkinThickness": "int64",
+    "Insulin": "int64",
+    "BMI": "float64",
+    "DiabetesPedigreeFunction": "float64",
+    "Age": "int64"
+  },
+  "target_leakage_check": {
+    "target_in_X": false,
+    "leakage_status": "PASSED (Target 'Outcome' is strictly excluded from predictor matrix X)"
+  },
+  "pipeline_state_documentation": {
+    "feature_engineering_performed": false,
+    "zero_value_replacement_performed": false,
+    "imputation_performed": false,
+    "scaling_performed": false,
+    "outlier_removal_performed": false,
+    "feature_selection_performed": false,
+    "notes": "Features and target are preserved in their raw observed state. No transformations have been applied."
+  }
+}
