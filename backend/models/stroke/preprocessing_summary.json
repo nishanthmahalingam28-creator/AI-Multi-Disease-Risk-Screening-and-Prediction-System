@@ -1,0 +1,238 @@
+{
+  "model_domain": "stroke",
+  "dataset_path": "datasets/stroke/stroke.csv",
+  "dataset_sha256": "aab4117b8c3c18e7cf7711033abc8adf97595d1a23fc29ea2f07904f68d09815",
+  "original_feature_count": 10,
+  "original_features": [
+    "gender",
+    "age",
+    "hypertension",
+    "heart_disease",
+    "ever_married",
+    "work_type",
+    "Residence_type",
+    "avg_glucose_level",
+    "bmi",
+    "smoking_status"
+  ],
+  "feature_group_classification": {
+    "continuous_numeric": [
+      "age",
+      "avg_glucose_level",
+      "bmi"
+    ],
+    "binary_numeric": [
+      "hypertension",
+      "heart_disease"
+    ],
+    "categorical": [
+      "gender",
+      "ever_married",
+      "work_type",
+      "Residence_type",
+      "smoking_status"
+    ]
+  },
+  "missing_values_before_preprocessing": {
+    "train": {
+      "gender": 0,
+      "age": 0,
+      "hypertension": 0,
+      "heart_disease": 0,
+      "ever_married": 0,
+      "work_type": 0,
+      "Residence_type": 0,
+      "avg_glucose_level": 0,
+      "bmi": 170,
+      "smoking_status": 0
+    },
+    "test": {
+      "gender": 0,
+      "age": 0,
+      "hypertension": 0,
+      "heart_disease": 0,
+      "ever_married": 0,
+      "work_type": 0,
+      "Residence_type": 0,
+      "avg_glucose_level": 0,
+      "bmi": 31,
+      "smoking_status": 0
+    }
+  },
+  "imputation_strategy": {
+    "continuous_numeric": "SimpleImputer(strategy='median')",
+    "binary_numeric": "SimpleImputer(strategy='median')",
+    "categorical": "SimpleImputer(strategy='most_frequent')"
+  },
+  "training_imputation_statistics": {
+    "continuous_medians": {
+      "age": 45.0,
+      "avg_glucose_level": 91.945,
+      "bmi": 28.0
+    },
+    "binary_medians": {
+      "hypertension": 0.0,
+      "heart_disease": 0.0
+    },
+    "bmi_training_median": 28.0
+  },
+  "scaler_selection": {
+    "selected_scaler": "RobustScaler",
+    "technical_justification": "RobustScaler was selected for continuous features because avg_glucose_level exhibits severe positive skewness (+1.57) and contains 503 IQR outlier samples (12.30% of training data), while bmi contains 101 outliers (2.47%). StandardScaler scales by the empirical mean and standard deviation, which are pulled and inflated by extreme glucose values up to 271.74 and BMI values up to 97.60. RobustScaler centers by the median and scales by the Interquartile Range (IQR), mapping the central 50% of typical vital measurements to [-0.5, +0.5] without distorting the distribution center or truncating extreme values.",
+    "comparison_details": {
+      "outliers_in_training_continuous": {
+        "age": {
+          "q1": 26.0,
+          "median": 45.0,
+          "q3": 61.0,
+          "iqr": 35.0,
+          "outlier_count": 0,
+          "outlier_percentage": 0.0
+        },
+        "avg_glucose_level": {
+          "q1": 77.3125,
+          "median": 91.945,
+          "q3": 114.1975,
+          "iqr": 36.885,
+          "outlier_count": 503,
+          "outlier_percentage": 12.3043
+        },
+        "bmi": {
+          "q1": 23.8,
+          "median": 28.0,
+          "q3": 32.8,
+          "iqr": 9.0,
+          "outlier_count": 101,
+          "outlier_percentage": 2.4706
+        }
+      },
+      "standard_scaler_stats": {
+        "age": {
+          "mean": -0.0,
+          "std": 1.0001,
+          "min": -1.9153,
+          "max": 1.7105
+        },
+        "avg_glucose_level": {
+          "mean": 0.0,
+          "std": 1.0001,
+          "min": -1.1313,
+          "max": 3.6554
+        },
+        "bmi": {
+          "mean": -0.0,
+          "std": 1.0001,
+          "min": -2.3939,
+          "max": 8.8518
+        }
+      },
+      "robust_scaler_stats": {
+        "age": {
+          "median": 0.0,
+          "iqr": 1.0,
+          "min": -1.2834,
+          "max": 1.0571
+        },
+        "avg_glucose_level": {
+          "median": 0.0,
+          "iqr": 1.0,
+          "min": -0.9984,
+          "max": 4.8745
+        },
+        "bmi": {
+          "median": 0.0,
+          "iqr": 1.0,
+          "min": -1.9667,
+          "max": 7.7333
+        }
+      },
+      "selected_scaler": "RobustScaler",
+      "technical_justification": "RobustScaler was selected for continuous features because avg_glucose_level exhibits severe positive skewness (+1.57) and contains 503 IQR outlier samples (12.30% of training data), while bmi contains 101 outliers (2.47%). StandardScaler scales by the empirical mean and standard deviation, which are pulled and inflated by extreme glucose values up to 271.74 and BMI values up to 97.60. RobustScaler centers by the median and scales by the Interquartile Range (IQR), mapping the central 50% of typical vital measurements to [-0.5, +0.5] without distorting the distribution center or truncating extreme values."
+    }
+  },
+  "categorical_encoding": {
+    "encoder": "OneHotEncoder(handle_unknown='ignore', sparse_output=False)",
+    "learned_categories": {
+      "gender": [
+        "Female",
+        "Male",
+        "Other"
+      ],
+      "ever_married": [
+        "No",
+        "Yes"
+      ],
+      "work_type": [
+        "Govt_job",
+        "Never_worked",
+        "Private",
+        "Self-employed",
+        "children"
+      ],
+      "Residence_type": [
+        "Rural",
+        "Urban"
+      ],
+      "smoking_status": [
+        "Unknown",
+        "formerly smoked",
+        "never smoked",
+        "smokes"
+      ]
+    },
+    "total_encoded_categorical_features": 16
+  },
+  "output_feature_metadata": {
+    "total_output_features": 21,
+    "output_feature_names": [
+      "age",
+      "avg_glucose_level",
+      "bmi",
+      "hypertension",
+      "heart_disease",
+      "gender_Female",
+      "gender_Male",
+      "gender_Other",
+      "ever_married_No",
+      "ever_married_Yes",
+      "work_type_Govt_job",
+      "work_type_Never_worked",
+      "work_type_Private",
+      "work_type_Self-employed",
+      "work_type_children",
+      "Residence_type_Rural",
+      "Residence_type_Urban",
+      "smoking_status_Unknown",
+      "smoking_status_formerly smoked",
+      "smoking_status_never smoked",
+      "smoking_status_smokes"
+    ]
+  },
+  "partition_shapes": {
+    "raw_train": [
+      4088,
+      10
+    ],
+    "raw_test": [
+      1022,
+      10
+    ],
+    "transformed_train": [
+      4088,
+      21
+    ],
+    "transformed_test": [
+      1022,
+      21
+    ]
+  },
+  "integrity_and_quarantine": {
+    "preprocessing_fit_partition": "X_train_only",
+    "test_set_used_only_for_transform": true,
+    "target_excluded": true,
+    "id_excluded": true,
+    "preprocessing_applied": true,
+    "model_training_applied": false,
+    "test_partition_quarantined": true
+  }
+}

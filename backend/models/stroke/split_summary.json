@@ -1,0 +1,71 @@
+{
+  "dataset_path": "datasets/stroke/stroke.csv",
+  "dataset_sha256": "aab4117b8c3c18e7cf7711033abc8adf97595d1a23fc29ea2f07904f68d09815",
+  "original_row_count": 5110,
+  "train_row_count": 4088,
+  "test_row_count": 1022,
+  "test_size": 0.2,
+  "random_state": 42,
+  "stratified": true,
+  "feature_count": 10,
+  "exact_feature_names_in_order": [
+    "gender",
+    "age",
+    "hypertension",
+    "heart_disease",
+    "ever_married",
+    "work_type",
+    "Residence_type",
+    "avg_glucose_level",
+    "bmi",
+    "smoking_status"
+  ],
+  "target_name": "stroke",
+  "target_observed_values": [
+    0,
+    1
+  ],
+  "original_class_counts": {
+    "0": 4861,
+    "1": 249
+  },
+  "train_class_counts": {
+    "0": 3889,
+    "1": 199
+  },
+  "test_class_counts": {
+    "0": 972,
+    "1": 50
+  },
+  "original_class_percentages": {
+    "0": 95.1272,
+    "1": 4.8728
+  },
+  "train_class_percentages": {
+    "0": 95.1321,
+    "1": 4.8679
+  },
+  "test_class_percentages": {
+    "0": 95.1076,
+    "1": 4.8924
+  },
+  "missing_bmi_counts": {
+    "total": 201,
+    "train": 170,
+    "test": 31,
+    "train_percentage": 4.1585,
+    "test_percentage": 3.0333
+  },
+  "overlap_check": {
+    "index_overlap_count": 0,
+    "is_disjoint": true,
+    "full_coverage": true
+  },
+  "preprocessing_applied": false,
+  "model_training_applied": false,
+  "test_set_quarantine": {
+    "status": "QUARANTINED",
+    "samples": 1022,
+    "rules": "Test partition must remain untouched until Step 7 final model evaluation. No fitting, imputation tuning, or threshold selection allowed on test set."
+  }
+}

@@ -1,0 +1,796 @@
+{
+  "model_domain": "stroke",
+  "dataset_path": "datasets/stroke/stroke.csv",
+  "dataset_sha256": "aab4117b8c3c18e7cf7711033abc8adf97595d1a23fc29ea2f07904f68d09815",
+  "evaluation_protocol": "5-fold StratifiedKFold on X_train (4,088 rows); final test set (1,022 rows) strictly quarantined",
+  "exact_selection_criteria": [
+    "Recall / Sensitivity (prioritized for clinical risk screening to minimize missed at-risk cases)",
+    "F1-Score (harmonic mean balancing precision and recall on the minority positive class)",
+    "PR-AUC (evaluates precision across all operating thresholds under severe 19.54:1 class imbalance)",
+    "ROC-AUC (evaluates true positive rate vs. false positive rate across the spectrum)",
+    "Precision (positive predictive value)",
+    "Accuracy (overall fraction of correct predictions)"
+  ],
+  "step_6_baseline_candidate_cv_results": {
+    "Logistic_Regression": {
+      "model_name": "Logistic Regression",
+      "parameters": {
+        "max_iter": "1000",
+        "n_jobs": "None",
+        "random_state": "42"
+      },
+      "accuracy": {
+        "mean": 0.9513,
+        "std": 0.0005,
+        "per_fold": [
+          0.9511,
+          0.9511,
+          0.9511,
+          0.9523,
+          0.951
+        ]
+      },
+      "precision": {
+        "mean": 0.0,
+        "std": 0.0,
+        "per_fold": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "recall_sensitivity": {
+        "mean": 0.0,
+        "std": 0.0,
+        "per_fold": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "f1_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "per_fold": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "roc_auc": {
+        "mean": 0.8395,
+        "std": 0.0105,
+        "per_fold": [
+          0.8287,
+          0.8547,
+          0.8317,
+          0.8328,
+          0.8497
+        ]
+      },
+      "pr_auc": {
+        "mean": 0.1923,
+        "std": 0.0411,
+        "per_fold": [
+          0.1759,
+          0.2648,
+          0.1787,
+          0.1408,
+          0.2012
+        ]
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 199,
+        "total_false_positives": 0,
+        "total_true_positives": 0,
+        "total_true_negatives": 3889,
+        "total_positive_cases": 199,
+        "total_negative_cases": 3889
+      },
+      "completed_successfully": true
+    },
+    "Random_Forest": {
+      "model_name": "Random Forest",
+      "parameters": {
+        "max_depth": "None",
+        "n_estimators": "300",
+        "n_jobs": "-1",
+        "random_state": "42"
+      },
+      "accuracy": {
+        "mean": 0.9513,
+        "std": 0.0009,
+        "per_fold": [
+          0.9511,
+          0.9499,
+          0.9523,
+          0.9523,
+          0.951
+        ]
+      },
+      "precision": {
+        "mean": 0.2667,
+        "std": 0.3887,
+        "per_fold": [
+          0.0,
+          0.3333,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "recall_sensitivity": {
+        "mean": 0.01,
+        "std": 0.0122,
+        "per_fold": [
+          0.0,
+          0.025,
+          0.025,
+          0.0,
+          0.0
+        ]
+      },
+      "f1_score": {
+        "mean": 0.0191,
+        "std": 0.0234,
+        "per_fold": [
+          0.0,
+          0.0465,
+          0.0488,
+          0.0,
+          0.0
+        ]
+      },
+      "roc_auc": {
+        "mean": 0.8143,
+        "std": 0.0201,
+        "per_fold": [
+          0.8045,
+          0.8509,
+          0.8094,
+          0.7907,
+          0.8162
+        ]
+      },
+      "pr_auc": {
+        "mean": 0.1678,
+        "std": 0.0352,
+        "per_fold": [
+          0.1408,
+          0.2172,
+          0.1634,
+          0.1212,
+          0.1964
+        ]
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 197,
+        "total_false_positives": 2,
+        "total_true_positives": 2,
+        "total_true_negatives": 3887,
+        "total_positive_cases": 199,
+        "total_negative_cases": 3889
+      },
+      "completed_successfully": true
+    },
+    "Support_Vector_Classifier": {
+      "model_name": "Support Vector Classifier",
+      "parameters": {
+        "kernel": "rbf",
+        "max_iter": "-1",
+        "probability": "True",
+        "random_state": "42"
+      },
+      "accuracy": {
+        "mean": 0.9513,
+        "std": 0.0005,
+        "per_fold": [
+          0.9511,
+          0.9511,
+          0.9511,
+          0.9523,
+          0.951
+        ]
+      },
+      "precision": {
+        "mean": 0.0,
+        "std": 0.0,
+        "per_fold": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "recall_sensitivity": {
+        "mean": 0.0,
+        "std": 0.0,
+        "per_fold": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "f1_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "per_fold": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "roc_auc": {
+        "mean": 0.6708,
+        "std": 0.03,
+        "per_fold": [
+          0.6343,
+          0.6988,
+          0.64,
+          0.7088,
+          0.6721
+        ]
+      },
+      "pr_auc": {
+        "mean": 0.1173,
+        "std": 0.0205,
+        "per_fold": [
+          0.1045,
+          0.1455,
+          0.0945,
+          0.1039,
+          0.1382
+        ]
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 199,
+        "total_false_positives": 0,
+        "total_true_positives": 0,
+        "total_true_negatives": 3889,
+        "total_positive_cases": 199,
+        "total_negative_cases": 3889
+      },
+      "completed_successfully": true
+    },
+    "Gradient_Boosting": {
+      "model_name": "Gradient Boosting",
+      "parameters": {
+        "learning_rate": "0.1",
+        "max_depth": "3",
+        "n_estimators": "100",
+        "random_state": "42"
+      },
+      "accuracy": {
+        "mean": 0.9499,
+        "std": 0.0015,
+        "per_fold": [
+          0.9487,
+          0.9487,
+          0.9487,
+          0.9523,
+          0.951
+        ]
+      },
+      "precision": {
+        "mean": 0.3,
+        "std": 0.1871,
+        "per_fold": [
+          0.25,
+          0.25,
+          0.0,
+          0.5,
+          0.5
+        ]
+      },
+      "recall_sensitivity": {
+        "mean": 0.0201,
+        "std": 0.0101,
+        "per_fold": [
+          0.025,
+          0.025,
+          0.0,
+          0.0256,
+          0.025
+        ]
+      },
+      "f1_score": {
+        "mean": 0.0375,
+        "std": 0.0188,
+        "per_fold": [
+          0.0455,
+          0.0455,
+          0.0,
+          0.0488,
+          0.0476
+        ]
+      },
+      "roc_auc": {
+        "mean": 0.8426,
+        "std": 0.0148,
+        "per_fold": [
+          0.8424,
+          0.8692,
+          0.8335,
+          0.8429,
+          0.825
+        ]
+      },
+      "pr_auc": {
+        "mean": 0.1951,
+        "std": 0.0304,
+        "per_fold": [
+          0.2012,
+          0.2468,
+          0.1551,
+          0.1778,
+          0.1946
+        ]
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 195,
+        "total_false_positives": 10,
+        "total_true_positives": 4,
+        "total_true_negatives": 3879,
+        "total_positive_cases": 199,
+        "total_negative_cases": 3889
+      },
+      "completed_successfully": true
+    },
+    "XGBoost": {
+      "model_name": "XGBoost",
+      "parameters": {
+        "eval_metric": "logloss",
+        "learning_rate": "0.1",
+        "max_depth": "3",
+        "n_estimators": "100",
+        "n_jobs": "None",
+        "random_state": "42"
+      },
+      "accuracy": {
+        "mean": 0.9494,
+        "std": 0.0012,
+        "per_fold": [
+          0.9499,
+          0.9511,
+          0.9474,
+          0.9486,
+          0.9498
+        ]
+      },
+      "precision": {
+        "mean": 0.0,
+        "std": 0.0,
+        "per_fold": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "recall_sensitivity": {
+        "mean": 0.0,
+        "std": 0.0,
+        "per_fold": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "f1_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "per_fold": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "roc_auc": {
+        "mean": 0.8431,
+        "std": 0.0168,
+        "per_fold": [
+          0.846,
+          0.8721,
+          0.8338,
+          0.8424,
+          0.8212
+        ]
+      },
+      "pr_auc": {
+        "mean": 0.2077,
+        "std": 0.0724,
+        "per_fold": [
+          0.1939,
+          0.3497,
+          0.1588,
+          0.1558,
+          0.1802
+        ]
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 199,
+        "total_false_positives": 8,
+        "total_true_positives": 0,
+        "total_true_negatives": 3881,
+        "total_positive_cases": 199,
+        "total_negative_cases": 3889
+      },
+      "completed_successfully": true
+    }
+  },
+  "step_7_imbalance_aware_cv_results": {
+    "Logistic_Regression_balanced": {
+      "model_name": "Logistic Regression balanced",
+      "parameters": {
+        "class_weight": "balanced",
+        "max_iter": "1000",
+        "random_state": "42"
+      },
+      "accuracy": {
+        "mean": 0.7387,
+        "std": 0.0097,
+        "per_fold": [
+          0.7225,
+          0.7482,
+          0.7359,
+          0.7381,
+          0.7491
+        ]
+      },
+      "precision": {
+        "mean": 0.1329,
+        "std": 0.0074,
+        "per_fold": [
+          0.1245,
+          0.1453,
+          0.1271,
+          0.1308,
+          0.1366
+        ]
+      },
+      "recall_sensitivity": {
+        "mean": 0.789,
+        "std": 0.0337,
+        "per_fold": [
+          0.775,
+          0.85,
+          0.75,
+          0.7949,
+          0.775
+        ]
+      },
+      "f1_score": {
+        "mean": 0.2274,
+        "std": 0.0121,
+        "per_fold": [
+          0.2145,
+          0.2482,
+          0.2174,
+          0.2246,
+          0.2322
+        ]
+      },
+      "roc_auc": {
+        "mean": 0.8388,
+        "std": 0.0112,
+        "per_fold": [
+          0.8254,
+          0.8541,
+          0.8314,
+          0.8332,
+          0.8499
+        ]
+      },
+      "pr_auc": {
+        "mean": 0.1935,
+        "std": 0.0392,
+        "per_fold": [
+          0.18,
+          0.2609,
+          0.1841,
+          0.1405,
+          0.2017
+        ]
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 42,
+        "total_false_positives": 1026,
+        "total_true_positives": 157,
+        "total_true_negatives": 2863
+      }
+    },
+    "Random_Forest_balanced": {
+      "model_name": "Random Forest balanced",
+      "parameters": {
+        "class_weight": "balanced",
+        "max_depth": "None",
+        "n_estimators": "300",
+        "random_state": "42"
+      },
+      "accuracy": {
+        "mean": 0.9366,
+        "std": 0.0076,
+        "per_fold": [
+          0.9328,
+          0.945,
+          0.9328,
+          0.9266,
+          0.9461
+        ]
+      },
+      "precision": {
+        "mean": 0.1788,
+        "std": 0.1359,
+        "per_fold": [
+          0.0588,
+          0.3529,
+          0.1053,
+          0.0435,
+          0.3333
+        ]
+      },
+      "recall_sensitivity": {
+        "mean": 0.0701,
+        "std": 0.0484,
+        "per_fold": [
+          0.025,
+          0.15,
+          0.05,
+          0.0256,
+          0.1
+        ]
+      },
+      "f1_score": {
+        "mean": 0.0999,
+        "std": 0.0706,
+        "per_fold": [
+          0.0351,
+          0.2105,
+          0.0678,
+          0.0323,
+          0.1538
+        ]
+      },
+      "roc_auc": {
+        "mean": 0.8172,
+        "std": 0.0105,
+        "per_fold": [
+          0.8232,
+          0.8349,
+          0.8092,
+          0.8068,
+          0.8118
+        ]
+      },
+      "pr_auc": {
+        "mean": 0.1745,
+        "std": 0.0426,
+        "per_fold": [
+          0.1537,
+          0.2375,
+          0.1479,
+          0.1227,
+          0.2105
+        ]
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 185,
+        "total_false_positives": 74,
+        "total_true_positives": 14,
+        "total_true_negatives": 3815
+      }
+    },
+    "Support_Vector_Classifier_balanced": {
+      "model_name": "Support Vector Classifier balanced",
+      "parameters": {
+        "class_weight": "balanced",
+        "kernel": "rbf",
+        "max_iter": "-1",
+        "probability": "True",
+        "random_state": "42"
+      },
+      "accuracy": {
+        "mean": 0.7605,
+        "std": 0.0101,
+        "per_fold": [
+          0.7506,
+          0.7641,
+          0.7689,
+          0.7466,
+          0.7723
+        ]
+      },
+      "precision": {
+        "mean": 0.1257,
+        "std": 0.0049,
+        "per_fold": [
+          0.1306,
+          0.1304,
+          0.1218,
+          0.1182,
+          0.1276
+        ]
+      },
+      "recall_sensitivity": {
+        "mean": 0.6583,
+        "std": 0.0431,
+        "per_fold": [
+          0.725,
+          0.675,
+          0.6,
+          0.6667,
+          0.625
+        ]
+      },
+      "f1_score": {
+        "mean": 0.211,
+        "std": 0.0083,
+        "per_fold": [
+          0.2214,
+          0.2186,
+          0.2025,
+          0.2008,
+          0.2119
+        ]
+      },
+      "roc_auc": {
+        "mean": 0.795,
+        "std": 0.009,
+        "per_fold": [
+          0.7857,
+          0.8085,
+          0.7912,
+          0.8024,
+          0.787
+        ]
+      },
+      "pr_auc": {
+        "mean": 0.1553,
+        "std": 0.0226,
+        "per_fold": [
+          0.1864,
+          0.1696,
+          0.1213,
+          0.1586,
+          0.1406
+        ]
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 68,
+        "total_false_positives": 911,
+        "total_true_positives": 131,
+        "total_true_negatives": 2978
+      }
+    },
+    "XGBoost_weighted": {
+      "model_name": "XGBoost weighted",
+      "parameters": {
+        "eval_metric": "logloss",
+        "learning_rate": "0.1",
+        "max_depth": "3",
+        "n_estimators": "100",
+        "random_state": "42",
+        "scale_pos_weight": "19.5427"
+      },
+      "accuracy": {
+        "mean": 0.7723,
+        "std": 0.0117,
+        "per_fold": [
+          0.7824,
+          0.7873,
+          0.7738,
+          0.7589,
+          0.7589
+        ]
+      },
+      "precision": {
+        "mean": 0.1415,
+        "std": 0.0074,
+        "per_fold": [
+          0.1443,
+          0.151,
+          0.1463,
+          0.1343,
+          0.1315
+        ]
+      },
+      "recall_sensitivity": {
+        "mean": 0.7237,
+        "std": 0.021,
+        "per_fold": [
+          0.7,
+          0.725,
+          0.75,
+          0.7436,
+          0.7
+        ]
+      },
+      "f1_score": {
+        "mean": 0.2366,
+        "std": 0.0107,
+        "per_fold": [
+          0.2393,
+          0.25,
+          0.2449,
+          0.2275,
+          0.2213
+        ]
+      },
+      "roc_auc": {
+        "mean": 0.8304,
+        "std": 0.0147,
+        "per_fold": [
+          0.8289,
+          0.8503,
+          0.8398,
+          0.8265,
+          0.8064
+        ]
+      },
+      "pr_auc": {
+        "mean": 0.1951,
+        "std": 0.0412,
+        "per_fold": [
+          0.2063,
+          0.2674,
+          0.1628,
+          0.1497,
+          0.1895
+        ]
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 55,
+        "total_false_positives": 876,
+        "total_true_positives": 144,
+        "total_true_negatives": 3013
+      }
+    }
+  },
+  "selected_model": "Logistic_Regression",
+  "selected_model_variant": "Logistic_Regression_balanced",
+  "selected_model_parameters": {
+    "max_iter": 1000,
+    "class_weight": "balanced",
+    "random_state": 42
+  },
+  "classification_threshold": 0.5,
+  "measurable_evidence_supporting_selection": {
+    "cross_validation_recall": 0.789,
+    "cross_validation_recall_std": 0.0337,
+    "cross_validation_roc_auc": 0.8388,
+    "cross_validation_pr_auc": 0.1935,
+    "cross_validation_f1": 0.2274,
+    "cross_validation_false_negatives": 42,
+    "cross_validation_true_positives": 157
+  },
+  "why_accuracy_alone_was_not_used": "With 95.13% of instances belonging to Class 0, a trivial zero-rule predictor classifying every patient as healthy achieves 95.13% accuracy while failing to identify a single stroke case (Recall = 0.0000, FN = 199 in training CV). Accuracy is therefore an uninformative and deceptive metric for imbalanced disease screening.",
+  "class_imbalance_limitation": "The training partition exhibits a 19.54:1 class imbalance (95.13% negative vs. 4.87% positive). The standard 0.50 threshold with unweighted candidate models resulted in near-zero recall (0.0000 to 0.0201). Applying class_weight='balanced' inversely weights samples relative to class frequencies, allowing the decision boundary to reflect screening sensitivity (achieving 78.90% CV recall and 80.00% test recall) at the cost of an increased false-positive rate (25.82%), which is acceptable for preliminary risk screening triage but requires clinical follow-up.",
+  "threshold_policy": "Standard 0.50 classification threshold applied to predicted class probabilities. No threshold optimization or tuning was conducted on the test set. The decision threshold remains strictly 0.50.",
+  "test_data_quarantine_confirmation": {
+    "test_set_used_for_model_selection": false,
+    "test_set_used_for_hyperparameter_tuning": false,
+    "test_set_used_for_threshold_selection": false,
+    "test_set_used_for_preprocessing_fitting": false,
+    "test_set_evaluated_only_once_after_selection": true,
+    "quarantined_test_rows": 1022,
+    "training_rows": 4088
+  },
+  "technical_selection_rationale": "Logistic Regression with class_weight='balanced' was selected based strictly on 5-fold cross-validation evidence on the 4,088-row training partition. In the baseline Step 6 unweighted evaluation, all models exhibited near-zero positive-class recall (0.00 to 0.02) at the 0.50 threshold due to severe 19.54:1 class imbalance. In the Step 7 training-only imbalance-aware comparison, Logistic Regression (class_weight='balanced') achieved the highest mean Recall / Sensitivity (0.7890 +/- 0.0337) across all candidate architectures, successfully identifying 157 of 199 positive stroke cases (reducing false negatives from 199 down to 42) while maintaining a strong ROC-AUC of 0.8388 +/- 0.0112 and PR-AUC of 0.1935 +/- 0.0392. For clinical screening, high sensitivity is prioritized to avoid missing at-risk individuals. Furthermore, Logistic Regression provides a convex, highly interpretable, log-odds linear framework that generalizes robustly without risk of ensemble overfitting.",
+  "no_clinical_claims_confirmation": "This screening model is designed for preliminary risk estimation and statistical prediction research. It does not provide medical diagnosis, does not establish clinical effectiveness, and cannot replace certified medical diagnostics."
+}

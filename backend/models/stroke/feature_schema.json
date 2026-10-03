@@ -1,0 +1,118 @@
+{
+  "model_domain": "stroke",
+  "dataset_path": "datasets/stroke/stroke.csv",
+  "dataset_row_count": 5110,
+  "dataset_column_count": 12,
+  "original_column_order": [
+    "id",
+    "gender",
+    "age",
+    "hypertension",
+    "heart_disease",
+    "ever_married",
+    "work_type",
+    "Residence_type",
+    "avg_glucose_level",
+    "bmi",
+    "smoking_status",
+    "stroke"
+  ],
+  "target_column": "stroke",
+  "target_dtype": "int64",
+  "target_observed_values": [
+    0,
+    1
+  ],
+  "target_class_counts": {
+    "0": 4861,
+    "1": 249
+  },
+  "target_class_percentages": {
+    "0": 95.1272,
+    "1": 4.8728
+  },
+  "imbalance_ratio": 19.5221,
+  "feature_count": 10,
+  "exact_feature_names_in_order": [
+    "gender",
+    "age",
+    "hypertension",
+    "heart_disease",
+    "ever_married",
+    "work_type",
+    "Residence_type",
+    "avg_glucose_level",
+    "bmi",
+    "smoking_status"
+  ],
+  "feature_data_types": {
+    "gender": "str",
+    "age": "float64",
+    "hypertension": "int64",
+    "heart_disease": "int64",
+    "ever_married": "str",
+    "work_type": "str",
+    "Residence_type": "str",
+    "avg_glucose_level": "float64",
+    "bmi": "float64",
+    "smoking_status": "str"
+  },
+  "numeric_features": [
+    "age",
+    "hypertension",
+    "heart_disease",
+    "avg_glucose_level",
+    "bmi"
+  ],
+  "categorical_features": [
+    "gender",
+    "ever_married",
+    "work_type",
+    "Residence_type",
+    "smoking_status"
+  ],
+  "excluded_columns": {
+    "id": "Arbitrary patient record identifier with 5,110 unique integer values across 5,110 rows (100% uniqueness). Non-generalizable and non-predictive; excluded to prevent arbitrary memorization and data leakage.",
+    "stroke": "Target disease outcome column (binary indicator: 0 for non-stroke, 1 for stroke). Excluded from predictor matrix X to prevent direct label leakage."
+  },
+  "missing_values_by_feature": {
+    "gender": 0,
+    "age": 0,
+    "hypertension": 0,
+    "heart_disease": 0,
+    "ever_married": 0,
+    "work_type": 0,
+    "Residence_type": 0,
+    "avg_glucose_level": 0,
+    "bmi": 201,
+    "smoking_status": 0
+  },
+  "missing_percentages_by_feature": {
+    "gender": 0.0,
+    "age": 0.0,
+    "hypertension": 0.0,
+    "heart_disease": 0.0,
+    "ever_married": 0.0,
+    "work_type": 0.0,
+    "Residence_type": 0.0,
+    "avg_glucose_level": 0.0,
+    "bmi": 3.9335,
+    "smoking_status": 0.0
+  },
+  "leakage_check": {
+    "target_in_X": false,
+    "identifier_in_X": false,
+    "status": "PASSED (Target 'stroke' and identifier 'id' are strictly excluded from predictor matrix X)",
+    "diagnostic_note": "No feature exhibits extreme linear correlation (|r| >= 0.85) with target 'stroke'. Correlation analysis was used as one diagnostic check and does not by itself prove the absence of leakage."
+  },
+  "pipeline_state_documentation": {
+    "feature_engineering_performed": false,
+    "imputation_performed": false,
+    "encoding_performed": false,
+    "scaling_performed": false,
+    "outlier_removal_performed": false,
+    "train_test_split_performed": false,
+    "model_training_performed": false,
+    "notes": "Features and target are defined in their raw observed state. No transformations, scaling, imputation, or feature engineering have been applied."
+  }
+}

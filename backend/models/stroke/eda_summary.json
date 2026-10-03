@@ -1,0 +1,419 @@
+{
+  "dataset_name": "Stroke Prediction Dataset",
+  "dataset_path": "datasets/stroke/stroke.csv",
+  "dataset_shape": {
+    "rows": 5110,
+    "columns": 12
+  },
+  "target_distribution": {
+    "target_column": "stroke",
+    "classes": {
+      "0": {
+        "count": 4861,
+        "percentage": 95.1272,
+        "label": "No Stroke (Negative)"
+      },
+      "1": {
+        "count": 249,
+        "percentage": 4.8728,
+        "label": "Stroke (Positive)"
+      }
+    },
+    "imbalance_ratio": 19.5221,
+    "imbalance_classification": "severe_class_imbalance"
+  },
+  "missing_values": {
+    "total_missing_cells": 201,
+    "columns_with_missing_values": [
+      "bmi"
+    ],
+    "missing_counts_per_column": {
+      "id": 0,
+      "gender": 0,
+      "age": 0,
+      "hypertension": 0,
+      "heart_disease": 0,
+      "ever_married": 0,
+      "work_type": 0,
+      "Residence_type": 0,
+      "avg_glucose_level": 0,
+      "bmi": 201,
+      "smoking_status": 0,
+      "stroke": 0
+    },
+    "missing_percentages_per_column": {
+      "id": 0.0,
+      "gender": 0.0,
+      "age": 0.0,
+      "hypertension": 0.0,
+      "heart_disease": 0.0,
+      "ever_married": 0.0,
+      "work_type": 0.0,
+      "Residence_type": 0.0,
+      "avg_glucose_level": 0.0,
+      "bmi": 3.9335,
+      "smoking_status": 0.0,
+      "stroke": 0.0
+    },
+    "missing_mechanism_note": "Column 'bmi' contains 201 missing values (3.93%). All other 11 columns contain 0 missing values."
+  },
+  "duplicate_rows": 0,
+  "numeric_descriptive_statistics": {
+    "age": {
+      "count": 5110,
+      "mean": 43.2266,
+      "std": 22.6126,
+      "min": 0.08,
+      "25%": 25.0,
+      "50%_median": 45.0,
+      "75%": 61.0,
+      "max": 82.0
+    },
+    "hypertension": {
+      "count": 5110,
+      "mean": 0.0975,
+      "std": 0.2966,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%_median": 0.0,
+      "75%": 0.0,
+      "max": 1.0
+    },
+    "heart_disease": {
+      "count": 5110,
+      "mean": 0.054,
+      "std": 0.2261,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%_median": 0.0,
+      "75%": 0.0,
+      "max": 1.0
+    },
+    "avg_glucose_level": {
+      "count": 5110,
+      "mean": 106.1477,
+      "std": 45.2836,
+      "min": 55.12,
+      "25%": 77.245,
+      "50%_median": 91.885,
+      "75%": 114.09,
+      "max": 271.74
+    },
+    "bmi": {
+      "count": 4909,
+      "mean": 28.8932,
+      "std": 7.8541,
+      "min": 10.3,
+      "25%": 23.5,
+      "50%_median": 28.1,
+      "75%": 33.1,
+      "max": 97.6
+    },
+    "stroke": {
+      "count": 5110,
+      "mean": 0.0487,
+      "std": 0.2153,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%_median": 0.0,
+      "75%": 0.0,
+      "max": 1.0
+    }
+  },
+  "skewness": {
+    "age": {
+      "skewness": -0.1371,
+      "skew_classification": "approximately_symmetric"
+    },
+    "hypertension": {
+      "skewness": 2.7154,
+      "skew_classification": "highly_skewed"
+    },
+    "heart_disease": {
+      "skewness": 3.9472,
+      "skew_classification": "highly_skewed"
+    },
+    "avg_glucose_level": {
+      "skewness": 1.5723,
+      "skew_classification": "highly_skewed"
+    },
+    "bmi": {
+      "skewness": 1.0553,
+      "skew_classification": "highly_skewed"
+    },
+    "stroke": {
+      "skewness": 4.1933,
+      "skew_classification": "highly_skewed"
+    }
+  },
+  "iqr_outlier_analysis": {
+    "age": {
+      "valid_count": 5110,
+      "q1": 25.0,
+      "q3": 61.0,
+      "iqr": 36.0,
+      "lower_bound": -29.0,
+      "upper_bound": 115.0,
+      "outlier_count": 0,
+      "outlier_percentage": 0.0
+    },
+    "avg_glucose_level": {
+      "valid_count": 5110,
+      "q1": 77.245,
+      "q3": 114.09,
+      "iqr": 36.845,
+      "lower_bound": 21.9775,
+      "upper_bound": 169.3575,
+      "outlier_count": 627,
+      "outlier_percentage": 12.2701
+    },
+    "bmi": {
+      "valid_count": 4909,
+      "q1": 23.5,
+      "q3": 33.1,
+      "iqr": 9.6,
+      "lower_bound": 9.1,
+      "upper_bound": 47.5,
+      "outlier_count": 110,
+      "outlier_percentage": 2.2408
+    }
+  },
+  "categorical_distributions": {
+    "gender": {
+      "Female": {
+        "count": 2994,
+        "percentage": 58.591
+      },
+      "Male": {
+        "count": 2115,
+        "percentage": 41.3894
+      },
+      "Other": {
+        "count": 1,
+        "percentage": 0.0196
+      }
+    },
+    "ever_married": {
+      "Yes": {
+        "count": 3353,
+        "percentage": 65.6164
+      },
+      "No": {
+        "count": 1757,
+        "percentage": 34.3836
+      }
+    },
+    "work_type": {
+      "Private": {
+        "count": 2925,
+        "percentage": 57.2407
+      },
+      "Self-employed": {
+        "count": 819,
+        "percentage": 16.0274
+      },
+      "children": {
+        "count": 687,
+        "percentage": 13.4442
+      },
+      "Govt_job": {
+        "count": 657,
+        "percentage": 12.8571
+      },
+      "Never_worked": {
+        "count": 22,
+        "percentage": 0.4305
+      }
+    },
+    "Residence_type": {
+      "Urban": {
+        "count": 2596,
+        "percentage": 50.8023
+      },
+      "Rural": {
+        "count": 2514,
+        "percentage": 49.1977
+      }
+    },
+    "smoking_status": {
+      "never smoked": {
+        "count": 1892,
+        "percentage": 37.0254
+      },
+      "Unknown": {
+        "count": 1544,
+        "percentage": 30.2153
+      },
+      "formerly smoked": {
+        "count": 885,
+        "percentage": 17.319
+      },
+      "smokes": {
+        "count": 789,
+        "percentage": 15.4403
+      }
+    }
+  },
+  "numeric_correlation_matrix": {
+    "age": {
+      "age": 1.0,
+      "hypertension": 0.2764,
+      "heart_disease": 0.2638,
+      "avg_glucose_level": 0.2382,
+      "bmi": 0.3334,
+      "stroke": 0.2453
+    },
+    "hypertension": {
+      "age": 0.2764,
+      "hypertension": 1.0,
+      "heart_disease": 0.1083,
+      "avg_glucose_level": 0.1745,
+      "bmi": 0.1678,
+      "stroke": 0.1279
+    },
+    "heart_disease": {
+      "age": 0.2638,
+      "hypertension": 0.1083,
+      "heart_disease": 1.0,
+      "avg_glucose_level": 0.1619,
+      "bmi": 0.0414,
+      "stroke": 0.1349
+    },
+    "avg_glucose_level": {
+      "age": 0.2382,
+      "hypertension": 0.1745,
+      "heart_disease": 0.1619,
+      "avg_glucose_level": 1.0,
+      "bmi": 0.1755,
+      "stroke": 0.1319
+    },
+    "bmi": {
+      "age": 0.3334,
+      "hypertension": 0.1678,
+      "heart_disease": 0.0414,
+      "avg_glucose_level": 0.1755,
+      "bmi": 1.0,
+      "stroke": 0.0424
+    },
+    "stroke": {
+      "age": 0.2453,
+      "hypertension": 0.1279,
+      "heart_disease": 0.1349,
+      "avg_glucose_level": 0.1319,
+      "bmi": 0.0424,
+      "stroke": 1.0
+    }
+  },
+  "pairwise_numeric_feature_correlations": [
+    {
+      "feature_1": "age",
+      "feature_2": "bmi",
+      "pearson_r": 0.3334,
+      "abs_r": 0.3334
+    },
+    {
+      "feature_1": "age",
+      "feature_2": "hypertension",
+      "pearson_r": 0.2764,
+      "abs_r": 0.2764
+    },
+    {
+      "feature_1": "age",
+      "feature_2": "heart_disease",
+      "pearson_r": 0.2638,
+      "abs_r": 0.2638
+    },
+    {
+      "feature_1": "age",
+      "feature_2": "avg_glucose_level",
+      "pearson_r": 0.2382,
+      "abs_r": 0.2382
+    },
+    {
+      "feature_1": "avg_glucose_level",
+      "feature_2": "bmi",
+      "pearson_r": 0.1755,
+      "abs_r": 0.1755
+    },
+    {
+      "feature_1": "hypertension",
+      "feature_2": "avg_glucose_level",
+      "pearson_r": 0.1745,
+      "abs_r": 0.1745
+    },
+    {
+      "feature_1": "hypertension",
+      "feature_2": "bmi",
+      "pearson_r": 0.1678,
+      "abs_r": 0.1678
+    },
+    {
+      "feature_1": "heart_disease",
+      "feature_2": "avg_glucose_level",
+      "pearson_r": 0.1619,
+      "abs_r": 0.1619
+    },
+    {
+      "feature_1": "hypertension",
+      "feature_2": "heart_disease",
+      "pearson_r": 0.1083,
+      "abs_r": 0.1083
+    },
+    {
+      "feature_1": "heart_disease",
+      "feature_2": "bmi",
+      "pearson_r": 0.0414,
+      "abs_r": 0.0414
+    }
+  ],
+  "feature_to_target_correlations": [
+    {
+      "feature": "age",
+      "pearson_r_with_target": 0.2453,
+      "abs_r": 0.2453
+    },
+    {
+      "feature": "heart_disease",
+      "pearson_r_with_target": 0.1349,
+      "abs_r": 0.1349
+    },
+    {
+      "feature": "avg_glucose_level",
+      "pearson_r_with_target": 0.1319,
+      "abs_r": 0.1319
+    },
+    {
+      "feature": "hypertension",
+      "pearson_r_with_target": 0.1279,
+      "abs_r": 0.1279
+    },
+    {
+      "feature": "bmi",
+      "pearson_r_with_target": 0.0424,
+      "abs_r": 0.0424
+    }
+  ],
+  "leakage_diagnostic": {
+    "highest_absolute_feature_correlation": 0.3334,
+    "highest_feature_pair": "age vs bmi",
+    "highest_target_correlation": 0.2453,
+    "highest_target_feature": "age",
+    "threshold_checked": 0.85,
+    "exceeds_threshold": false,
+    "identifier_column": "id",
+    "id_unique_count": 5110,
+    "id_total_rows": 5110,
+    "leakage_statement": "No obvious target leakage was identified during the feature and target inspection. The identifier column 'id' is 100% unique (5,110 values across 5,110 rows) and must be excluded from feature vectors. Correlation analysis was used as one diagnostic check and does not by itself prove the absence of leakage or proxy identifiers."
+  },
+  "data_quality_observations": [
+    "The dataset contains exactly 5110 rows and 12 columns.",
+    "Zero full-row duplicate records exist across the entire dataset.",
+    "Column 'bmi' contains 201 missing values (3.93% of rows), which requires principled imputation (e.g. median).",
+    "Column 'id' represents a unique arbitrary patient identifier (5,110 distinct integers) with no predictive utility.",
+    "Column 'gender' contains a rare category 'Other' with exactly 1 record, alongside 'Female' (58.59%) and 'Male' (41.39%).",
+    "Column 'smoking_status' contains an explicit 'Unknown' category for 1,544 rows (30.22%), which represents a recorded category rather than a null token.",
+    "Severe class imbalance is present: 'stroke' = 1 constitutes only 4.87% (249 cases) versus 95.13% (4,861 cases) for 'stroke' = 0.",
+    "Positive skewness is observed in 'avg_glucose_level' (+1.5723) with 627 statistical IQR outliers (12.27%) and 'bmi' (+1.0553) with 110 IQR outliers (2.24%).",
+    "No continuous predictor exhibits near-perfect linear correlation (|r| >= 0.85) with the target."
+  ]
+}

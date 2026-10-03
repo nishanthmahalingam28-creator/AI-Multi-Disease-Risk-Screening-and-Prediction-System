@@ -1,0 +1,167 @@
+{
+  "model_domain": "stroke",
+  "dataset_path": "datasets/stroke/stroke.csv",
+  "dataset_sha256": "aab4117b8c3c18e7cf7711033abc8adf97595d1a23fc29ea2f07904f68d09815",
+  "dataset_hash": "aab4117b8c3c18e7cf7711033abc8adf97595d1a23fc29ea2f07904f68d09815",
+  "train_samples": 4088,
+  "test_samples": 1022,
+  "train_size": 4088,
+  "test_size": 1022,
+  "target_name": "stroke",
+  "target_variable": "stroke",
+  "target_classes": {
+    "0": "Class 0",
+    "1": "Class 1"
+  },
+  "class_counts": {
+    "train": {
+      "Class 0": 3889,
+      "Class 1": 199
+    },
+    "test": {
+      "Class 0": 972,
+      "Class 1": 50
+    }
+  },
+  "selected_model": "Logistic_Regression",
+  "selected_model_name": "Logistic_Regression",
+  "selected_model_variant": "Logistic_Regression_balanced",
+  "selected_model_parameters": {
+    "max_iter": 1000,
+    "class_weight": "balanced",
+    "random_state": 42
+  },
+  "exact_model_parameters": {
+    "max_iter": 1000,
+    "class_weight": "balanced",
+    "random_state": 42
+  },
+  "preprocessing_summary": {
+    "scaler_type": "robust",
+    "continuous_numeric_pipeline": "SimpleImputer(strategy='median') -> RobustScaler()",
+    "binary_numeric_pipeline": "SimpleImputer(strategy='median') -> Passthrough",
+    "categorical_pipeline": "SimpleImputer(strategy='most_frequent') -> OneHotEncoder(handle_unknown='ignore', sparse_output=False)",
+    "input_features": 10,
+    "transformed_features": 21
+  },
+  "threshold": 0.5,
+  "classification_threshold": 0.5,
+  "threshold_policy": "Standard 0.50 probability threshold. No threshold optimization was performed on the test set.",
+  "accuracy": 0.7446,
+  "precision": 0.1375,
+  "recall": 0.8,
+  "f1": 0.2346,
+  "roc_auc": 0.8436,
+  "pr_auc": 0.2684,
+  "confusion_matrix": {
+    "tn": 721,
+    "fp": 251,
+    "fn": 10,
+    "tp": 40,
+    "matrix": [
+      [
+        721,
+        251
+      ],
+      [
+        10,
+        40
+      ]
+    ]
+  },
+  "tn": 721,
+  "fp": 251,
+  "fn": 10,
+  "tp": 40,
+  "fpr": 0.2582,
+  "fnr": 0.2,
+  "cv_evidence": {
+    "model_name": "Logistic Regression balanced",
+    "parameters": {
+      "class_weight": "balanced",
+      "max_iter": "1000",
+      "random_state": "42"
+    },
+    "accuracy": {
+      "mean": 0.7387,
+      "std": 0.0097,
+      "per_fold": [
+        0.7225,
+        0.7482,
+        0.7359,
+        0.7381,
+        0.7491
+      ]
+    },
+    "precision": {
+      "mean": 0.1329,
+      "std": 0.0074,
+      "per_fold": [
+        0.1245,
+        0.1453,
+        0.1271,
+        0.1308,
+        0.1366
+      ]
+    },
+    "recall_sensitivity": {
+      "mean": 0.789,
+      "std": 0.0337,
+      "per_fold": [
+        0.775,
+        0.85,
+        0.75,
+        0.7949,
+        0.775
+      ]
+    },
+    "f1_score": {
+      "mean": 0.2274,
+      "std": 0.0121,
+      "per_fold": [
+        0.2145,
+        0.2482,
+        0.2174,
+        0.2246,
+        0.2322
+      ]
+    },
+    "roc_auc": {
+      "mean": 0.8388,
+      "std": 0.0112,
+      "per_fold": [
+        0.8254,
+        0.8541,
+        0.8314,
+        0.8332,
+        0.8499
+      ]
+    },
+    "pr_auc": {
+      "mean": 0.1935,
+      "std": 0.0392,
+      "per_fold": [
+        0.18,
+        0.2609,
+        0.1841,
+        0.1405,
+        0.2017
+      ]
+    },
+    "screening_error_counts": {
+      "total_false_negatives": 42,
+      "total_false_positives": 1026,
+      "total_true_positives": 157,
+      "total_true_negatives": 2863
+    }
+  },
+  "test_evaluation_statement": "The quarantined test partition (1,022 samples) was evaluated exactly once after all model development, training, and selection steps were complete.",
+  "test_set_used_only_for_final_evaluation": true,
+  "limitations": [
+    "Severe class imbalance in the training partition (19.54:1) requires class-weight balancing.",
+    "Higher sensitivity (80.0% recall) incurs an elevated false-positive rate (25.82%), appropriate for initial screening triage but not diagnostic confirmation.",
+    "BMI contains 3.93% missing values imputed via median training statistic.",
+    "Rare category 'Other' in gender and high frequency of 'Unknown' in smoking_status require robust categorical handling."
+  ],
+  "disclaimer": "This model provides an AI-based risk screening estimate and does not constitute a definitive clinical diagnosis."
+}
