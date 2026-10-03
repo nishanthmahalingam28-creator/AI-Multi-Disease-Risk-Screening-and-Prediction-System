@@ -1,0 +1,154 @@
+{
+  "dataset": "C:\\Users\\Naveenraj K\\OneDrive\\Documents\\AI-Multi-Disease-Risk-Screening-and-Prediction-System\\datasets\\breast_cancer\\breast.csv",
+  "split_configuration": {
+    "test_size": 0.2,
+    "train_samples": 455,
+    "test_samples_quarantined": 114,
+    "stratified": true,
+    "random_state": 42
+  },
+  "cross_validation_configuration": {
+    "strategy": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 42,
+    "preprocessing": "StandardScaler fitted fold-by-fold strictly on training subsets"
+  },
+  "candidate_cv_results": {
+    "Logistic_Regression": {
+      "accuracy": {
+        "mean": 0.9736,
+        "std": 0.0149
+      },
+      "precision": {
+        "mean": 0.9771,
+        "std": 0.028
+      },
+      "recall_sensitivity": {
+        "mean": 0.9529,
+        "std": 0.0399
+      },
+      "f1_score": {
+        "mean": 0.964,
+        "std": 0.0207
+      },
+      "roc_auc": {
+        "mean": 0.9958,
+        "std": 0.0047
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 8,
+        "total_false_positives": 4,
+        "total_malignant_cases": 170
+      }
+    },
+    "Random_Forest": {
+      "accuracy": {
+        "mean": 0.9648,
+        "std": 0.0146
+      },
+      "precision": {
+        "mean": 0.9641,
+        "std": 0.0107
+      },
+      "recall_sensitivity": {
+        "mean": 0.9412,
+        "std": 0.0416
+      },
+      "f1_score": {
+        "mean": 0.9519,
+        "std": 0.0207
+      },
+      "roc_auc": {
+        "mean": 0.9889,
+        "std": 0.0067
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 10,
+        "total_false_positives": 6,
+        "total_malignant_cases": 170
+      }
+    },
+    "Support_Vector_Classifier": {
+      "accuracy": {
+        "mean": 0.9714,
+        "std": 0.0054
+      },
+      "precision": {
+        "mean": 0.9769,
+        "std": 0.021
+      },
+      "recall_sensitivity": {
+        "mean": 0.9471,
+        "std": 0.0343
+      },
+      "f1_score": {
+        "mean": 0.961,
+        "std": 0.0082
+      },
+      "roc_auc": {
+        "mean": 0.9949,
+        "std": 0.005
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 9,
+        "total_false_positives": 4,
+        "total_malignant_cases": 170
+      }
+    },
+    "Gradient_Boosting": {
+      "accuracy": {
+        "mean": 0.967,
+        "std": 0.0139
+      },
+      "precision": {
+        "mean": 0.9646,
+        "std": 0.0211
+      },
+      "recall_sensitivity": {
+        "mean": 0.9471,
+        "std": 0.0343
+      },
+      "f1_score": {
+        "mean": 0.9553,
+        "std": 0.0196
+      },
+      "roc_auc": {
+        "mean": 0.9908,
+        "std": 0.0054
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 9,
+        "total_false_positives": 6,
+        "total_malignant_cases": 170
+      }
+    },
+    "XGBoost": {
+      "accuracy": {
+        "mean": 0.9714,
+        "std": 0.0112
+      },
+      "precision": {
+        "mean": 0.9704,
+        "std": 0.0181
+      },
+      "recall_sensitivity": {
+        "mean": 0.9529,
+        "std": 0.0235
+      },
+      "f1_score": {
+        "mean": 0.9614,
+        "std": 0.0154
+      },
+      "roc_auc": {
+        "mean": 0.994,
+        "std": 0.0036
+      },
+      "screening_error_counts": {
+        "total_false_negatives": 8,
+        "total_false_positives": 5,
+        "total_malignant_cases": 170
+      }
+    }
+  }
+}

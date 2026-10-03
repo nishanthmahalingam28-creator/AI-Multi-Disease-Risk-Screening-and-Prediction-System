@@ -1,0 +1,391 @@
+{
+  "disease": "breast_cancer",
+  "model_name": "breast_cancer_risk_screening",
+  "version": "1.0.0",
+  "task": "binary_classification",
+  "feature_count": 30,
+  "expected_numeric_input_type": "float64",
+  "feature_names": [
+    "radius_mean",
+    "texture_mean",
+    "perimeter_mean",
+    "area_mean",
+    "smoothness_mean",
+    "compactness_mean",
+    "concavity_mean",
+    "concave points_mean",
+    "symmetry_mean",
+    "fractal_dimension_mean",
+    "radius_se",
+    "texture_se",
+    "perimeter_se",
+    "area_se",
+    "smoothness_se",
+    "compactness_se",
+    "concavity_se",
+    "concave points_se",
+    "symmetry_se",
+    "fractal_dimension_se",
+    "radius_worst",
+    "texture_worst",
+    "perimeter_worst",
+    "area_worst",
+    "smoothness_worst",
+    "compactness_worst",
+    "concavity_worst",
+    "concave points_worst",
+    "symmetry_worst",
+    "fractal_dimension_worst"
+  ],
+  "feature_order": [
+    "radius_mean",
+    "texture_mean",
+    "perimeter_mean",
+    "area_mean",
+    "smoothness_mean",
+    "compactness_mean",
+    "concavity_mean",
+    "concave points_mean",
+    "symmetry_mean",
+    "fractal_dimension_mean",
+    "radius_se",
+    "texture_se",
+    "perimeter_se",
+    "area_se",
+    "smoothness_se",
+    "compactness_se",
+    "concavity_se",
+    "concave points_se",
+    "symmetry_se",
+    "fractal_dimension_se",
+    "radius_worst",
+    "texture_worst",
+    "perimeter_worst",
+    "area_worst",
+    "smoothness_worst",
+    "compactness_worst",
+    "concavity_worst",
+    "concave points_worst",
+    "symmetry_worst",
+    "fractal_dimension_worst"
+  ],
+  "feature_groups": {
+    "mean_features": [
+      "radius_mean",
+      "texture_mean",
+      "perimeter_mean",
+      "area_mean",
+      "smoothness_mean",
+      "compactness_mean",
+      "concavity_mean",
+      "concave points_mean",
+      "symmetry_mean",
+      "fractal_dimension_mean"
+    ],
+    "se_features": [
+      "radius_se",
+      "texture_se",
+      "perimeter_se",
+      "area_se",
+      "smoothness_se",
+      "compactness_se",
+      "concavity_se",
+      "concave points_se",
+      "symmetry_se",
+      "fractal_dimension_se"
+    ],
+    "worst_features": [
+      "radius_worst",
+      "texture_worst",
+      "perimeter_worst",
+      "area_worst",
+      "smoothness_worst",
+      "compactness_worst",
+      "concavity_worst",
+      "concave points_worst",
+      "symmetry_worst",
+      "fractal_dimension_worst"
+    ]
+  },
+  "target": {
+    "name": "diagnosis",
+    "positive_class": {
+      "value": 1,
+      "label": "Malignant (M)",
+      "description": "High risk screening estimate (malignant breast lesion)"
+    },
+    "negative_class": {
+      "value": 0,
+      "label": "Benign (B)",
+      "description": "Low risk screening estimate (benign breast lesion)"
+    }
+  },
+  "target_mapping": {
+    "B": 0,
+    "M": 1
+  },
+  "target_classes": {
+    "0": "Benign (B)",
+    "1": "Malignant (M)"
+  },
+  "excluded_columns": [
+    {
+      "name": "id",
+      "reason": "Non-clinical arbitrary database identifier with zero physiological value"
+    },
+    {
+      "name": "Unnamed: 32",
+      "reason": "CSV parser artifact from trailing comma; contains 100% missing values"
+    }
+  ],
+  "model_input_requirements": {
+    "input_format": "Tabular pandas DataFrame or 2D array-like with 30 columns",
+    "required_column_count": 30,
+    "missing_values_allowed": false,
+    "ordering_enforced": true,
+    "feature_dtype": "float64"
+  },
+  "features": [
+    {
+      "name": "radius_mean",
+      "type": "numerical",
+      "min": 6.981,
+      "max": 28.11,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: radius_mean"
+    },
+    {
+      "name": "texture_mean",
+      "type": "numerical",
+      "min": 9.71,
+      "max": 39.28,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: texture_mean"
+    },
+    {
+      "name": "perimeter_mean",
+      "type": "numerical",
+      "min": 43.79,
+      "max": 188.5,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: perimeter_mean"
+    },
+    {
+      "name": "area_mean",
+      "type": "numerical",
+      "min": 143.5,
+      "max": 2501.0,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: area_mean"
+    },
+    {
+      "name": "smoothness_mean",
+      "type": "numerical",
+      "min": 0.0526,
+      "max": 0.1634,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: smoothness_mean"
+    },
+    {
+      "name": "compactness_mean",
+      "type": "numerical",
+      "min": 0.0194,
+      "max": 0.3454,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: compactness_mean"
+    },
+    {
+      "name": "concavity_mean",
+      "type": "numerical",
+      "min": 0.0,
+      "max": 0.4268,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: concavity_mean"
+    },
+    {
+      "name": "concave points_mean",
+      "type": "numerical",
+      "min": 0.0,
+      "max": 0.2012,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: concave points_mean"
+    },
+    {
+      "name": "symmetry_mean",
+      "type": "numerical",
+      "min": 0.106,
+      "max": 0.304,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: symmetry_mean"
+    },
+    {
+      "name": "fractal_dimension_mean",
+      "type": "numerical",
+      "min": 0.05,
+      "max": 0.0974,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: fractal_dimension_mean"
+    },
+    {
+      "name": "radius_se",
+      "type": "numerical",
+      "min": 0.1115,
+      "max": 2.873,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: radius_se"
+    },
+    {
+      "name": "texture_se",
+      "type": "numerical",
+      "min": 0.3602,
+      "max": 4.885,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: texture_se"
+    },
+    {
+      "name": "perimeter_se",
+      "type": "numerical",
+      "min": 0.757,
+      "max": 21.98,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: perimeter_se"
+    },
+    {
+      "name": "area_se",
+      "type": "numerical",
+      "min": 6.802,
+      "max": 542.2,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: area_se"
+    },
+    {
+      "name": "smoothness_se",
+      "type": "numerical",
+      "min": 0.0017,
+      "max": 0.0311,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: smoothness_se"
+    },
+    {
+      "name": "compactness_se",
+      "type": "numerical",
+      "min": 0.0023,
+      "max": 0.1354,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: compactness_se"
+    },
+    {
+      "name": "concavity_se",
+      "type": "numerical",
+      "min": 0.0,
+      "max": 0.396,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: concavity_se"
+    },
+    {
+      "name": "concave points_se",
+      "type": "numerical",
+      "min": 0.0,
+      "max": 0.0528,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: concave points_se"
+    },
+    {
+      "name": "symmetry_se",
+      "type": "numerical",
+      "min": 0.0079,
+      "max": 0.079,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: symmetry_se"
+    },
+    {
+      "name": "fractal_dimension_se",
+      "type": "numerical",
+      "min": 0.0009,
+      "max": 0.0298,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: fractal_dimension_se"
+    },
+    {
+      "name": "radius_worst",
+      "type": "numerical",
+      "min": 7.93,
+      "max": 36.04,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: radius_worst"
+    },
+    {
+      "name": "texture_worst",
+      "type": "numerical",
+      "min": 12.02,
+      "max": 49.54,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: texture_worst"
+    },
+    {
+      "name": "perimeter_worst",
+      "type": "numerical",
+      "min": 50.41,
+      "max": 251.2,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: perimeter_worst"
+    },
+    {
+      "name": "area_worst",
+      "type": "numerical",
+      "min": 185.2,
+      "max": 4254.0,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: area_worst"
+    },
+    {
+      "name": "smoothness_worst",
+      "type": "numerical",
+      "min": 0.0712,
+      "max": 0.2226,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: smoothness_worst"
+    },
+    {
+      "name": "compactness_worst",
+      "type": "numerical",
+      "min": 0.0273,
+      "max": 1.058,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: compactness_worst"
+    },
+    {
+      "name": "concavity_worst",
+      "type": "numerical",
+      "min": 0.0,
+      "max": 1.252,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: concavity_worst"
+    },
+    {
+      "name": "concave points_worst",
+      "type": "numerical",
+      "min": 0.0,
+      "max": 0.291,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: concave points_worst"
+    },
+    {
+      "name": "symmetry_worst",
+      "type": "numerical",
+      "min": 0.1565,
+      "max": 0.6638,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: symmetry_worst"
+    },
+    {
+      "name": "fractal_dimension_worst",
+      "type": "numerical",
+      "min": 0.055,
+      "max": 0.2075,
+      "scaling": "StandardScaler",
+      "description": "Fine Needle Aspirate (FNA) digitized cell nucleus metric: fractal_dimension_worst"
+    }
+  ],
+  "disclaimer": "This model provides an AI screening estimate for risk evaluation and does not replace professional histological diagnosis."
+}

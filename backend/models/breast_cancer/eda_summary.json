@@ -1,0 +1,195 @@
+{
+  "dataset_path": "C:\\Users\\Naveenraj K\\OneDrive\\Documents\\AI-Multi-Disease-Risk-Screening-and-Prediction-System\\datasets\\breast_cancer\\breast.csv",
+  "raw_shape": {
+    "rows": 569,
+    "columns": 33
+  },
+  "evaluated_features_count": 30,
+  "target_variable": "diagnosis",
+  "target_distribution": {
+    "counts": {
+      "B": 357,
+      "M": 212
+    },
+    "percentages": {
+      "B": 62.74,
+      "M": 37.26
+    },
+    "imbalance_ratio": 1.68
+  },
+  "missing_values_count": 0,
+  "duplicate_records_count": 0,
+  "skewness_summary": {
+    "top_positive_skewed": {
+      "area_se": 5.447,
+      "concavity_se": 5.11,
+      "fractal_dimension_se": 3.924,
+      "perimeter_se": 3.444,
+      "radius_se": 3.089
+    },
+    "top_negative_skewed": {
+      "smoothness_worst": 0.415,
+      "smoothness_mean": 0.456,
+      "concave points_worst": 0.493
+    }
+  },
+  "outlier_summary": {
+    "top_outlier_features": [
+      [
+        "area_se",
+        {
+          "count": 65,
+          "percentage": 11.42,
+          "lower_bound": -23.16,
+          "upper_bound": 86.2
+        }
+      ],
+      [
+        "radius_se",
+        {
+          "count": 38,
+          "percentage": 6.68,
+          "lower_bound": -0.1374,
+          "upper_bound": 0.8486
+        }
+      ],
+      [
+        "perimeter_se",
+        {
+          "count": 38,
+          "percentage": 6.68,
+          "lower_bound": -1.0205,
+          "upper_bound": 5.9835
+        }
+      ],
+      [
+        "area_worst",
+        {
+          "count": 35,
+          "percentage": 6.15,
+          "lower_bound": -337.75,
+          "upper_bound": 1937.05
+        }
+      ],
+      [
+        "smoothness_se",
+        {
+          "count": 30,
+          "percentage": 5.27,
+          "lower_bound": 0.0007,
+          "upper_bound": 0.0126
+        }
+      ],
+      [
+        "compactness_se",
+        {
+          "count": 28,
+          "percentage": 4.92,
+          "lower_bound": -0.016,
+          "upper_bound": 0.0615
+        }
+      ],
+      [
+        "fractal_dimension_se",
+        {
+          "count": 28,
+          "percentage": 4.92,
+          "lower_bound": -0.0012,
+          "upper_bound": 0.008
+        }
+      ],
+      [
+        "symmetry_se",
+        {
+          "count": 27,
+          "percentage": 4.75,
+          "lower_bound": 0.0027,
+          "upper_bound": 0.036
+        }
+      ]
+    ]
+  },
+  "collinearity_summary": {
+    "pairs_above_90_count": 21,
+    "top_collinear_pairs": [
+      {
+        "feature_1": "radius_mean",
+        "feature_2": "perimeter_mean",
+        "pearson_r": 0.9979
+      },
+      {
+        "feature_1": "radius_worst",
+        "feature_2": "perimeter_worst",
+        "pearson_r": 0.9937
+      },
+      {
+        "feature_1": "radius_mean",
+        "feature_2": "area_mean",
+        "pearson_r": 0.9874
+      },
+      {
+        "feature_1": "perimeter_mean",
+        "feature_2": "area_mean",
+        "pearson_r": 0.9865
+      },
+      {
+        "feature_1": "radius_worst",
+        "feature_2": "area_worst",
+        "pearson_r": 0.984
+      },
+      {
+        "feature_1": "perimeter_worst",
+        "feature_2": "area_worst",
+        "pearson_r": 0.9776
+      },
+      {
+        "feature_1": "radius_se",
+        "feature_2": "perimeter_se",
+        "pearson_r": 0.9728
+      },
+      {
+        "feature_1": "perimeter_mean",
+        "feature_2": "perimeter_worst",
+        "pearson_r": 0.9704
+      },
+      {
+        "feature_1": "radius_mean",
+        "feature_2": "radius_worst",
+        "pearson_r": 0.9695
+      },
+      {
+        "feature_1": "perimeter_mean",
+        "feature_2": "radius_worst",
+        "pearson_r": 0.9695
+      }
+    ]
+  },
+  "target_correlations": {
+    "top_5_positive": {
+      "perimeter_mean": 0.7426,
+      "radius_worst": 0.7765,
+      "concave points_mean": 0.7766,
+      "perimeter_worst": 0.7829,
+      "concave points_worst": 0.7936
+    },
+    "lowest_correlations": {
+      "smoothness_se": -0.067,
+      "fractal_dimension_mean": -0.0128,
+      "texture_se": -0.0083,
+      "symmetry_se": -0.0065,
+      "fractal_dimension_se": 0.078
+    }
+  },
+  "generated_plots": [
+    "01_target_distribution.png",
+    "02_distributions_mean_features.png",
+    "03_distributions_se_features.png",
+    "04_distributions_worst_features.png",
+    "05_boxplots_mean_features.png",
+    "06_boxplots_se_features.png",
+    "07_boxplots_worst_features.png",
+    "08_correlation_matrix_heatmap.png",
+    "09_target_correlations.png",
+    "10_feature_relationships_pairplot.png"
+  ]
+}
